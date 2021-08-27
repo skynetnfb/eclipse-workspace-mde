@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/it.disim.univaq.cooltivar.model/src-gen" creationIcons="false"
+    editDirectory="/it.disim.univaq.cooltivar.model.edit/src-gen" editorDirectory="/it.disim.univaq.cooltivar.model.editor/src-gen"
+    modelPluginID="it.disim.univaq.cooltivar.model" modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Model" basePackage="it.disim.univaq.cooltivar" disposableProviderFactory="true"
+      ecorePackage="model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//cultivationStatus">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/COMPLETE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//actionStatus">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/TODO"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/SUCCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/FAIL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//actionType">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/CUSTOM"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/THREAT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/REMEDY"/>
+    </genEnums>
+    <genClasses ecoreClass="model.ecore#//Application"/>
+    <genClasses ecoreClass="model.ecore#//Descripted">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Descripted/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Descripted/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Cultivar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivar/plantSpecies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Cultivar/threats"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/uname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/birthdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/surname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Cultivation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivation/plant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivation/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/weight"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//PlantSpecies">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//PlantSpecies/plantGenus"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Action">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/remedy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/endDate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/threat"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Threat">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/remedies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/cultivars"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Remedy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Remedy/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Remedy/threats"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Field"/>
+  </genPackages>
+</genmodel:GenModel>

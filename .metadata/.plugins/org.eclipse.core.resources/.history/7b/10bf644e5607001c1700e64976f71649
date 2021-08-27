@@ -1,0 +1,16 @@
+/**
+ */
+package it.disim.univaq.cooltivar.cooltivar;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Remedy</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see it.disim.univaq.cooltivar.cooltivar.ModelPackage#getRemedy()
+ * @model
+ * @generated
+ */
+public interface Remedy extends Entity {
+} // Remedy

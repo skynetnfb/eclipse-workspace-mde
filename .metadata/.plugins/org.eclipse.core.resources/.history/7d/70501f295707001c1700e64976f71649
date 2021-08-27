@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cooltivar" nsURI="http://it.disim.univaq.cooltivar.model" nsPrefix="cooltivar">
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Descripted">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cultivar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plantSpecies" lowerBound="1"
+        eType="#//PlantSpecies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threats" upperBound="-1"
+        eType="#//Threat" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthdate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="surname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cultivation" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plant" lowerBound="1" eType="#//Cultivar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//cultivationStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlantSpecies" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plantGenus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="remedy" eType="#//Remedy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" eType="#//Threat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
+        eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="remedies" lowerBound="1"
+        upperBound="-1" eType="#//Remedy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cultivars" eType="#//Cultivar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Remedy" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threats" lowerBound="1"
+        upperBound="-1" eType="#//Threat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//Descripted"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="cultivationStatus">
+    <eLiterals name="DRAFT"/>
+    <eLiterals name="PROGRESS" value="1" literal="PROGRESS"/>
+    <eLiterals name="COMPLETE" value="2" literal="COMPLETE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="actionStatus">
+    <eLiterals name="TODO"/>
+    <eLiterals name="PROGRESS" value="1"/>
+    <eLiterals name="SUCCESS" value="2"/>
+    <eLiterals name="FAIL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="actionType">
+    <eLiterals name="CUSTOM"/>
+    <eLiterals name="THREAT" value="1"/>
+    <eLiterals name="REMEDY" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

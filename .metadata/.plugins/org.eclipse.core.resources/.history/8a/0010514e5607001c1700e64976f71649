@@ -1,0 +1,158 @@
+/**
+ */
+package it.disim.univaq.cooltivar.cooltivar.impl;
+
+import it.disim.univaq.cooltivar.cooltivar.Cultivation;
+import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Plant;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Cultivation</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.CultivationImpl#getPlant <em>Plant</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CultivationImpl extends EntityImpl implements Cultivation {
+	/**
+	 * The cached value of the '{@link #getPlant() <em>Plant</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlant()
+	 * @generated
+	 * @ordered
+	 */
+	protected Plant plant;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CultivationImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ModelPackage.Literals.CULTIVATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Plant getPlant() {
+		if (plant != null && plant.eIsProxy()) {
+			InternalEObject oldPlant = (InternalEObject) plant;
+			plant = (Plant) eResolveProxy(oldPlant);
+			if (plant != oldPlant) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.CULTIVATION__PLANT, oldPlant,
+							plant));
+			}
+		}
+		return plant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Plant basicGetPlant() {
+		return plant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlant(Plant newPlant) {
+		Plant oldPlant = plant;
+		plant = newPlant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CULTIVATION__PLANT, oldPlant, plant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case ModelPackage.CULTIVATION__PLANT:
+			if (resolve)
+				return getPlant();
+			return basicGetPlant();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case ModelPackage.CULTIVATION__PLANT:
+			setPlant((Plant) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case ModelPackage.CULTIVATION__PLANT:
+			setPlant((Plant) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case ModelPackage.CULTIVATION__PLANT:
+			return plant != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //CultivationImpl

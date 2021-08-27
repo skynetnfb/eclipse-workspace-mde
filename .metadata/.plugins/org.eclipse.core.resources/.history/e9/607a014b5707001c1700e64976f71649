@@ -1,0 +1,37 @@
+/**
+ */
+package it.disim.univaq.cooltivar.cooltivar.impl;
+
+import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Plant;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Plant</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class PlantImpl extends EntityImpl implements Plant {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PlantImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ModelPackage.Literals.PLANT;
+	}
+
+} //PlantImpl
