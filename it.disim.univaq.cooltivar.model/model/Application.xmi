@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cooltivar:Application
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cooltivar="http://it.disim.univaq.cooltivar.model"
+    xsi:schemaLocation="http://it.disim.univaq.cooltivar.model model.ecore">
+  <user name="Admin1">
+    <solutions
+        name="trattamento afidi"
+        author="//@user.0"
+        problems="//@user.0/@problems.0"/>
+    <problems
+        name="afidi"
+        author="//@user.0"
+        process="//@user.0/@itemProcess.0"/>
+    <itemProcess/>
+  </user>
+  <user name="Gianni Coldiretti">
+    <process>
+      <actionHistory/>
+      <actionHistory
+          name="irrigazione"/>
+    </process>
+  </user>
+</cooltivar:Application>
