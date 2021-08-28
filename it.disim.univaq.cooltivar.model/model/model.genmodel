@@ -10,10 +10,10 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Model" basePackage="it.disim.univaq.cooltivar" disposableProviderFactory="true"
       ecorePackage="model.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//cultivationStatus">
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/DRAFT"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/PROGRESS"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//cultivationStatus/COMPLETE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//processStatus">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/COMPLETE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//actionStatus">
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/TODO"/>
@@ -26,14 +26,21 @@
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/THREAT"/>
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/REMEDY"/>
     </genEnums>
-    <genClasses ecoreClass="model.ecore#//Application"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//userType">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//userType/ADMIN"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//userType/BASIC"/>
+    </genEnums>
+    <genClasses ecoreClass="model.ecore#//Application">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Application/user"/>
+    </genClasses>
     <genClasses ecoreClass="model.ecore#//Descripted">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Descripted/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Descripted/name"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//Cultivar">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivar/plantSpecies"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Cultivar/threats"/>
+    <genClasses ecoreClass="model.ecore#//ItemProcess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/itemProcessType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/problems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/author"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//User">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/email"/>
@@ -41,34 +48,41 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/uname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/birthdate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/surname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/userType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/solutions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/problems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/itemProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/process"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//Cultivation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivation/plant"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/startDate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/endDate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/status"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Cultivation/field"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Cultivation/weight"/>
+    <genClasses ecoreClass="model.ecore#//Process">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/itemProcess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/weight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Process/actionHistory"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//PlantSpecies">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//PlantSpecies/plantGenus"/>
-    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ItemSpecies"/>
     <genClasses ecoreClass="model.ecore#//Action">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/remedy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/endDate"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/threat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/problem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/solution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/acttionsType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/actionStatus"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//Threat">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/author"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/remedies"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Threat/cultivars"/>
+    <genClasses ecoreClass="model.ecore#//Problem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/solutions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/process"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//Remedy">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Remedy/author"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Remedy/threats"/>
+    <genClasses ecoreClass="model.ecore#//Solution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Solution/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Solution/problems"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//Field"/>
+    <genClasses ecoreClass="model.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Location/coordinates"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
