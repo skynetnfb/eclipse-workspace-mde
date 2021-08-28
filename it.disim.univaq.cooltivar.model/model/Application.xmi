@@ -14,11 +14,21 @@
         name="afidi"
         author="//@user.0"
         process="//@user.0/@itemProcess.0"/>
-    <itemProcess/>
+    <itemProcess
+        name="fagioli"
+        author="//@user.0"/>
+    <itemProcess
+        name="pomodori"
+        author="//@user.0"/>
+    <itemProcess
+        name="zucchini"
+        author="//@user.0"/>
   </user>
   <user name="Gianni Coldiretti">
-    <process>
-      <actionHistory/>
+    <process
+        weight="-1.0">
+      <actionHistory
+          name="report afidi"/>
       <actionHistory
           name="irrigazione"/>
     </process>
