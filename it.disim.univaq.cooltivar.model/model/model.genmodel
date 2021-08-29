@@ -10,25 +10,25 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Model" basePackage="it.disim.univaq.cooltivar" disposableProviderFactory="true"
       ecorePackage="model.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//processStatus">
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/DRAFT"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/PROGRESS"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//processStatus/COMPLETE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//ProcessStatus">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProcessStatus/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProcessStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProcessStatus/COMPLETE"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//actionStatus">
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/TODO"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/PROGRESS"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/SUCCESS"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionStatus/FAIL"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//ActionStatus">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionStatus/TODO"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionStatus/SUCCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionStatus/FAIL"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//actionType">
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/CUSTOM"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/THREAT"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//actionType/REMEDY"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionType/CUSTOM"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionType/PROBLEM"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//ActionType/SOLUTION"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//userType">
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//userType/ADMIN"/>
-      <genEnumLiterals ecoreEnumLiteral="model.ecore#//userType/BASIC"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//UserType">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//UserType/ADMIN"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//UserType/BASIC"/>
     </genEnums>
     <genClasses ecoreClass="model.ecore#//Application">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Application/user"/>
@@ -53,13 +53,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/problems"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/itemProcess"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//User/process"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/fullname"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Process">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/itemProcess"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/endDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/status"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/field"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/weight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Process/actionHistory"/>
     </genClasses>
@@ -69,7 +70,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/endDate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/problem"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/solution"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/acttionsType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/actionsType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/actionStatus"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Problem">

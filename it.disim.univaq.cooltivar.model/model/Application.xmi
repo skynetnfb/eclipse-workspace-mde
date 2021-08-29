@@ -5,7 +5,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:cooltivar="http://it.disim.univaq.cooltivar.model"
     xsi:schemaLocation="http://it.disim.univaq.cooltivar.model model.ecore">
-  <user name="Admin1">
+  <user name="Admin1"
+      email="a@a.com"
+      username="comandoio"
+      uname="guido"
+      birthdate="0006-06-13T00:00:00.000+0100"
+      surname="la vespa">
     <solutions
         name="trattamento afidi"
         author="//@user.0"
@@ -24,13 +29,32 @@
         name="zucchini"
         author="//@user.0"/>
   </user>
-  <user name="Gianni Coldiretti">
+  <user name="Gianni Coldiretti"
+      email="g@g.it"
+      username="giannetto"
+      uname="gianni"
+      birthdate="0006-06-03T00:00:00.000+0100"
+      surname="rossi">
     <process
-        weight="-1.0">
+        startDate="0006-07-14T00:00:00.000+0100"
+        endDate="0006-07-15T00:00:00.000+0100"
+        weight="1.0">
       <actionHistory
-          name="report afidi"/>
+          name="report afidi"
+          startDate="0006-07-14T00:00:00.000+0100"
+          endDate="0006-07-15T00:00:00.000+0100"
+          problem="//@user.0/@problems.0"
+          actionsType="PROBLEM"/>
       <actionHistory
-          name="irrigazione"/>
+          name="irrigazione"
+          startDate="0006-07-14T00:00:00.000+0100"
+          endDate="0006-07-15T00:00:00.000+0100"/>
+      <actionHistory
+          name="trattamento afidi"
+          startDate="0006-07-13T00:00:00.000+0100"
+          endDate="0006-07-13T00:00:00.000+0100"
+          solution="//@user.0/@solutions.0"
+          actionsType="SOLUTION"/>
     </process>
   </user>
 </cooltivar:Application>
