@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/it.disim.univaq.agri/src-gen" creationIcons="false"
+    editDirectory="/it.disim.univaq.agri.edit/src-gen" editorDirectory="/it.disim.univaq.agri.editor/src-gen"
+    modelPluginID="it.disim.univaq.agri" modelName="Agri" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>agri.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Agri" basePackage="it.disim.univaq" disposableProviderFactory="true"
+      ecorePackage="agri.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="agri.ecore#//ProcessStatus">
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ProcessStatus/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ProcessStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ProcessStatus/COMPLETE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="agri.ecore#//ActionStatus">
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionStatus/TODO"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionStatus/SUCCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionStatus/FAIL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="agri.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionType/CUSTOM"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionType/PROBLEM"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//ActionType/SOLUTION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="agri.ecore#//UserType">
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//UserType/ADMIN"/>
+      <genEnumLiterals ecoreEnumLiteral="agri.ecore#//UserType/BASIC"/>
+    </genEnums>
+    <genClasses ecoreClass="agri.ecore#//Agri">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/user"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//Descripted">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Descripted/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Descripted/name"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//ItemProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//ItemProcess/problems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//ItemProcess/author"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/fullName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/birthdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/userType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/solutions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/problems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/itemProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/process"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//Process">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Process/itemProcess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/weight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Process/actionHistory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/location"/>
+      <genOperations ecoreOperation="agri.ecore#//Process/checkFutureDate"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/endDate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Action/problem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Action/solution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/actionsType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/actionStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/fullDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//Problem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Problem/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Problem/solutions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Problem/process"/>
+    </genClasses>
+    <genClasses ecoreClass="agri.ecore#//Solution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Solution/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Solution/problems"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
