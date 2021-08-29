@@ -70,6 +70,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/actionsType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/actionStatus"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/fullDescription"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Action/process"/>
     </genClasses>
     <genClasses ecoreClass="agri.ecore#//Problem">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Problem/author"/>
