@@ -1,0 +1,8 @@
+module Cool2Agricolture;
+
+-- @path Cool=/Cooltivar2Agricolture/Cool.ecore
+-- @path Agri=/Cooltivar2Agricolture/Agri.ecore
+
+
+create OUT: Agri from IN: Cool;
+

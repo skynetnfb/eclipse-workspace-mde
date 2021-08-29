@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ecore:EPackage [
+<!ENTITY _0 "http://www.eclipse.org/emf/2002/Ecore">
+]>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cooltivar" nsURI="http://it.disim.univaq.CoolSource.model" nsPrefix="cooltivar">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" upperBound="-1"
+        eType="#//User" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Descripted">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType &_0;#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemProcess" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcessType" eType="#//ItemSpecies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problems" upperBound="-1"
+        eType="#//Problem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
+        eType="#//User"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1" eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uname" lowerBound="1" eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthdate" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="surname" eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userType" lowerBound="1"
+        eType="#//UserType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
+        eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problems" upperBound="-1"
+        eType="#//Problem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" upperBound="-1"
+        eType="#//ItemProcess" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
+        eType="#//Process" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType &_0;#//EString"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.uname.concat(' ').concat(self.surname)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Descripted">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="minW checkDate"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="minW" value="self.weight >= 0.0"/>
+      <details key="checkDate" value="self.startDate &lt; self.endDate"/>
+    </eAnnotations>
+    <eOperations name="checkFutureDate" eType="ecore:EDataType &_0;#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" eType="#//ItemProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ProcessStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionHistory" upperBound="-1"
+        eType="#//Action" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemSpecies" eSuperTypes="#//Descripted"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Descripted">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="checkDate checkActionType"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="checkDate" value="self.startDate &lt; self.endDate"/>
+      <details key="checkActionType" value="(self.solution.oclIsUndefined()) and (not self.problem.oclIsUndefined()) and (self.actionsType = ActionType::PROBLEM)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or (self.problem.oclIsUndefined()) and (not self.solution.oclIsUndefined()) and (self.actionsType = ActionType::SOLUTION)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or (self.actionsType = ActionType::CUSTOM)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
+        eType="ecore:EDataType &_0;#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problem" eType="#//Problem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionsType" lowerBound="1"
+        eType="#//ActionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionStatus" lowerBound="1"
+        eType="#//ActionStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullDescription" eType="ecore:EDataType &_0;#//EString"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.actionStatus.toString().concat(' ').concat(self.actionsType.toString().concat(' ').concat('Descrizione...'))"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Problem" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
+        eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
+        eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//ItemProcess"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problems" lowerBound="1"
+        upperBound="-1" eType="#//Problem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//Descripted">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordinates" transient="true">
+      <eGenericType eClassifier="ecore:EDataType &_0;#//EEList">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProcessStatus">
+    <eLiterals name="DRAFT"/>
+    <eLiterals name="PROGRESS" value="1" literal="PROGRESS"/>
+    <eLiterals name="COMPLETE" value="2" literal="COMPLETE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
+    <eLiterals name="TODO"/>
+    <eLiterals name="PROGRESS" value="1"/>
+    <eLiterals name="SUCCESS" value="2"/>
+    <eLiterals name="FAIL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
+    <eLiterals name="CUSTOM"/>
+    <eLiterals name="PROBLEM" value="1"/>
+    <eLiterals name="SOLUTION" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UserType">
+    <eLiterals name="ADMIN"/>
+    <eLiterals name="BASIC" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>
