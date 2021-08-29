@@ -6,3 +6,57 @@ module Cool2Agricolture;
 
 create OUT: Agri from IN: Cool;
 
+rule CoolUser2AgriUser {
+	from
+		s: Cool!User
+	to
+		t: Agri!User (
+			name <- s.uname+s.surname,
+			email <- s.email,
+			username <- s.username,
+			birthdate <- s.birthdate,
+			userType <- s.userType,
+			solutions <- s.solutions,
+			problems <- s.problems,
+			itemProcess <- s.itemProcess,
+			process <- s.process
+		)
+}
+
+rule CoolDescripted2AgriDescripted {
+	from
+		s: Cool!Descripted
+	to
+		t: Agri!Descripted (
+			name <- s.name,
+			description <- s.description
+		)
+}
+
+rule CoolItemProcess2AgriItemProcess {
+	from
+		s: Cool!ItemProcess
+	to
+		t: Agri!IttemProcess (
+			name <- s.name,
+			description <- s.description,
+			problems <- s.problems,
+			author <- s.author
+		)
+}
+
+rule CoolProcess2AgriProcess {
+	from
+		s: Cool!Process
+	to
+		t: Agri!Process (
+			name <- s.name,
+			description <- s.description,
+			startDate <- s.startDate,
+			endDate <- s.endDate,
+			status <- s.status,
+			weight <- s.weight,
+			actionHistory <- s.actionHistory,
+			location <- s.location.name
+		)
+}
