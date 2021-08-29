@@ -5,6 +5,7 @@ package it.disim.univaq.cooltivar.cooltivar;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -22,6 +23,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see it.disim.univaq.cooltivar.cooltivar.ModelFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface ModelPackage extends EPackage {
@@ -68,13 +71,22 @@ public interface ModelPackage extends EPackage {
 	int APPLICATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>User</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__USER = 0;
+
+	/**
 	 * The number of structural features of the '<em>Application</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = 0;
+	int APPLICATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Application</em>' class.
@@ -132,50 +144,77 @@ public interface ModelPackage extends EPackage {
 	int DESCRIPTED_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.CultivarImpl <em>Cultivar</em>}' class.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ItemProcessImpl <em>Item Process</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.CultivarImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getCultivar()
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ItemProcessImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getItemProcess()
 	 * @generated
 	 */
-	int CULTIVAR = 2;
+	int ITEM_PROCESS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Plant Species</b></em>' reference.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVAR__PLANT_SPECIES = 0;
+	int ITEM_PROCESS__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Threats</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVAR__THREATS = 1;
+	int ITEM_PROCESS__NAME = DESCRIPTED__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Cultivar</em>' class.
+	 * The feature id for the '<em><b>Item Process Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVAR_FEATURE_COUNT = 2;
+	int ITEM_PROCESS__ITEM_PROCESS_TYPE = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Cultivar</em>' class.
+	 * The feature id for the '<em><b>Problems</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVAR_OPERATION_COUNT = 0;
+	int ITEM_PROCESS__PROBLEMS = DESCRIPTED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_PROCESS__AUTHOR = DESCRIPTED_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Item Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_PROCESS_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Item Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_PROCESS_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl <em>User</em>}' class.
@@ -188,13 +227,31 @@ public interface ModelPackage extends EPackage {
 	int USER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__NAME = DESCRIPTED__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER__EMAIL = 0;
+	int USER__EMAIL = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -203,7 +260,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER__USERNAME = 1;
+	int USER__USERNAME = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Uname</b></em>' attribute.
@@ -212,7 +269,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER__UNAME = 2;
+	int USER__UNAME = DESCRIPTED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Birthdate</b></em>' attribute.
@@ -221,7 +278,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER__BIRTHDATE = 3;
+	int USER__BIRTHDATE = DESCRIPTED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Surname</b></em>' attribute.
@@ -230,16 +287,61 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER__SURNAME = 4;
+	int USER__SURNAME = DESCRIPTED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * The feature id for the '<em><b>User Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER__FIELDS = 5;
+	int USER__USER_TYPE = DESCRIPTED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Solutions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__SOLUTIONS = DESCRIPTED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Problems</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__PROBLEMS = DESCRIPTED_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Item Process</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__ITEM_PROCESS = DESCRIPTED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Process</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__PROCESS = DESCRIPTED_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__FULLNAME = DESCRIPTED_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>User</em>' class.
@@ -248,7 +350,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_FEATURE_COUNT = 6;
+	int USER_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>User</em>' class.
@@ -257,17 +359,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_OPERATION_COUNT = 0;
+	int USER_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.CultivationImpl <em>Cultivation</em>}' class.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ProcessImpl <em>Process</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.CultivationImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getCultivation()
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ProcessImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProcess()
 	 * @generated
 	 */
-	int CULTIVATION = 4;
+	int PROCESS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -276,7 +378,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+	int PROCESS__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -285,16 +387,16 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__NAME = DESCRIPTED__NAME;
+	int PROCESS__NAME = DESCRIPTED__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Plant</b></em>' reference.
+	 * The feature id for the '<em><b>Item Process</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__PLANT = DESCRIPTED_FEATURE_COUNT + 0;
+	int PROCESS__ITEM_PROCESS = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -303,7 +405,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__START_DATE = DESCRIPTED_FEATURE_COUNT + 1;
+	int PROCESS__START_DATE = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>End Date</b></em>' attribute.
@@ -312,7 +414,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__END_DATE = DESCRIPTED_FEATURE_COUNT + 2;
+	int PROCESS__END_DATE = DESCRIPTED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -321,16 +423,16 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__STATUS = DESCRIPTED_FEATURE_COUNT + 3;
+	int PROCESS__STATUS = DESCRIPTED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Field</b></em>' reference.
+	 * The feature id for the '<em><b>Location</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__FIELD = DESCRIPTED_FEATURE_COUNT + 4;
+	int PROCESS__LOCATION = DESCRIPTED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -339,35 +441,53 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION__WEIGHT = DESCRIPTED_FEATURE_COUNT + 5;
+	int PROCESS__WEIGHT = DESCRIPTED_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>Cultivation</em>' class.
+	 * The feature id for the '<em><b>Action History</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 6;
+	int PROCESS__ACTION_HISTORY = DESCRIPTED_FEATURE_COUNT + 6;
 
 	/**
-	 * The number of operations of the '<em>Cultivation</em>' class.
+	 * The number of structural features of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CULTIVATION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int PROCESS_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.PlantSpeciesImpl <em>Plant Species</em>}' class.
+	 * The operation id for the '<em>Check Future Date</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.PlantSpeciesImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getPlantSpecies()
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS___CHECK_FUTURE_DATE = DESCRIPTED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ItemSpeciesImpl <em>Item Species</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ItemSpeciesImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getItemSpecies()
 	 * @generated
 	 */
-	int PLANT_SPECIES = 5;
+	int ITEM_SPECIES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -376,7 +496,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLANT_SPECIES__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+	int ITEM_SPECIES__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -385,34 +505,25 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLANT_SPECIES__NAME = DESCRIPTED__NAME;
+	int ITEM_SPECIES__NAME = DESCRIPTED__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Plant Genus</b></em>' attribute.
+	 * The number of structural features of the '<em>Item Species</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLANT_SPECIES__PLANT_GENUS = DESCRIPTED_FEATURE_COUNT + 0;
+	int ITEM_SPECIES_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Plant Species</em>' class.
+	 * The number of operations of the '<em>Item Species</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLANT_SPECIES_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Plant Species</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLANT_SPECIES_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int ITEM_SPECIES_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl <em>Action</em>}' class.
@@ -443,22 +554,13 @@ public interface ModelPackage extends EPackage {
 	int ACTION__NAME = DESCRIPTED__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Remedy</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__REMEDY = DESCRIPTED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__START_DATE = DESCRIPTED_FEATURE_COUNT + 1;
+	int ACTION__START_DATE = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End Date</b></em>' attribute.
@@ -467,16 +569,61 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__END_DATE = DESCRIPTED_FEATURE_COUNT + 2;
+	int ACTION__END_DATE = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Threat</b></em>' reference.
+	 * The feature id for the '<em><b>Problem</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__THREAT = DESCRIPTED_FEATURE_COUNT + 3;
+	int ACTION__PROBLEM = DESCRIPTED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Solution</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__SOLUTION = DESCRIPTED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Actions Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ACTIONS_TYPE = DESCRIPTED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Action Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ACTION_STATUS = DESCRIPTED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Full Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__FULL_DESCRIPTION = DESCRIPTED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Process</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__PROCESS = DESCRIPTED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -485,7 +632,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 4;
+	int ACTION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -497,14 +644,14 @@ public interface ModelPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ThreatImpl <em>Threat</em>}' class.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ProblemImpl <em>Problem</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ThreatImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getThreat()
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ProblemImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProblem()
 	 * @generated
 	 */
-	int THREAT = 7;
+	int PROBLEM = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -513,7 +660,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+	int PROBLEM__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -522,7 +669,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__NAME = DESCRIPTED__NAME;
+	int PROBLEM__NAME = DESCRIPTED__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' reference.
@@ -531,53 +678,53 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__AUTHOR = DESCRIPTED_FEATURE_COUNT + 0;
+	int PROBLEM__AUTHOR = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Remedies</b></em>' reference list.
+	 * The feature id for the '<em><b>Solutions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__REMEDIES = DESCRIPTED_FEATURE_COUNT + 1;
+	int PROBLEM__SOLUTIONS = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cultivars</b></em>' reference.
+	 * The feature id for the '<em><b>Process</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__CULTIVARS = DESCRIPTED_FEATURE_COUNT + 2;
+	int PROBLEM__PROCESS = DESCRIPTED_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Threat</em>' class.
+	 * The number of structural features of the '<em>Problem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 3;
+	int PROBLEM_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Threat</em>' class.
+	 * The number of operations of the '<em>Problem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int PROBLEM_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.RemedyImpl <em>Remedy</em>}' class.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.SolutionImpl <em>Solution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.RemedyImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getRemedy()
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.SolutionImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getSolution()
 	 * @generated
 	 */
-	int REMEDY = 8;
+	int SOLUTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -586,7 +733,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+	int SOLUTION__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -595,7 +742,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY__NAME = DESCRIPTED__NAME;
+	int SOLUTION__NAME = DESCRIPTED__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' reference.
@@ -604,44 +751,44 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY__AUTHOR = DESCRIPTED_FEATURE_COUNT + 0;
+	int SOLUTION__AUTHOR = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Threats</b></em>' reference list.
+	 * The feature id for the '<em><b>Problems</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY__THREATS = DESCRIPTED_FEATURE_COUNT + 1;
+	int SOLUTION__PROBLEMS = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Remedy</em>' class.
+	 * The number of structural features of the '<em>Solution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 2;
+	int SOLUTION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Remedy</em>' class.
+	 * The number of operations of the '<em>Solution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMEDY_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int SOLUTION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.FieldImpl <em>Field</em>}' class.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.LocationImpl <em>Location</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.FieldImpl
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getField()
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.LocationImpl
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getLocation()
 	 * @generated
 	 */
-	int FIELD = 9;
+	int LOCATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -650,7 +797,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__DESCRIPTION = DESCRIPTED__DESCRIPTION;
+	int LOCATION__DESCRIPTION = DESCRIPTED__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -659,55 +806,74 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__NAME = DESCRIPTED__NAME;
+	int LOCATION__NAME = DESCRIPTED__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Field</em>' class.
+	 * The feature id for the '<em><b>Coordinates</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 0;
+	int LOCATION__COORDINATES = DESCRIPTED_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Field</em>' class.
+	 * The number of structural features of the '<em>Location</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int LOCATION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.cultivationStatus <em>cultivation Status</em>}' enum.
+	 * The number of operations of the '<em>Location</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.cultivationStatus
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getcultivationStatus()
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.ProcessStatus <em>Process Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see it.disim.univaq.cooltivar.cooltivar.ProcessStatus
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProcessStatus()
 	 * @generated
 	 */
-	int CULTIVATION_STATUS = 10;
+	int PROCESS_STATUS = 10;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.actionStatus <em>action Status</em>}' enum.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.ActionStatus <em>Action Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.actionStatus
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getactionStatus()
+	 * @see it.disim.univaq.cooltivar.cooltivar.ActionStatus
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getActionStatus()
 	 * @generated
 	 */
 	int ACTION_STATUS = 11;
 
 	/**
-	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.actionType <em>action Type</em>}' enum.
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.ActionType <em>Action Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see it.disim.univaq.cooltivar.cooltivar.actionType
-	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getactionType()
+	 * @see it.disim.univaq.cooltivar.cooltivar.ActionType
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getActionType()
 	 * @generated
 	 */
 	int ACTION_TYPE = 12;
+
+	/**
+	 * The meta object id for the '{@link it.disim.univaq.cooltivar.cooltivar.UserType <em>User Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see it.disim.univaq.cooltivar.cooltivar.UserType
+	 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getUserType()
+	 * @generated
+	 */
+	int USER_TYPE = 13;
 
 	/**
 	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Application <em>Application</em>}'.
@@ -718,6 +884,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getApplication();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.Application#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Application#getUser()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_User();
 
 	/**
 	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Descripted <em>Descripted</em>}'.
@@ -752,36 +929,47 @@ public interface ModelPackage extends EPackage {
 	EAttribute getDescripted_Name();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Cultivar <em>Cultivar</em>}'.
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.ItemProcess <em>Item Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cultivar</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivar
+	 * @return the meta object for class '<em>Item Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemProcess
 	 * @generated
 	 */
-	EClass getCultivar();
+	EClass getItemProcess();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Cultivar#getPlantSpecies <em>Plant Species</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.ItemProcess#getItemProcessType <em>Item Process Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Plant Species</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivar#getPlantSpecies()
-	 * @see #getCultivar()
+	 * @return the meta object for the reference '<em>Item Process Type</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemProcess#getItemProcessType()
+	 * @see #getItemProcess()
 	 * @generated
 	 */
-	EReference getCultivar_PlantSpecies();
+	EReference getItemProcess_ItemProcessType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.Cultivar#getThreats <em>Threats</em>}'.
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.ItemProcess#getProblems <em>Problems</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Threats</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivar#getThreats()
-	 * @see #getCultivar()
+	 * @return the meta object for the containment reference list '<em>Problems</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemProcess#getProblems()
+	 * @see #getItemProcess()
 	 * @generated
 	 */
-	EReference getCultivar_Threats();
+	EReference getItemProcess_Problems();
+
+	/**
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.ItemProcess#getAuthor <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Author</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemProcess#getAuthor()
+	 * @see #getItemProcess()
+	 * @generated
+	 */
+	EReference getItemProcess_Author();
 
 	/**
 	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.User <em>User</em>}'.
@@ -849,112 +1037,177 @@ public interface ModelPackage extends EPackage {
 	EAttribute getUser_Surname();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.User#getFields <em>Fields</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.User#getUserType <em>User Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fields</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.User#getFields()
+	 * @return the meta object for the attribute '<em>User Type</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getUserType()
 	 * @see #getUser()
 	 * @generated
 	 */
-	EReference getUser_Fields();
+	EAttribute getUser_UserType();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation <em>Cultivation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.User#getSolutions <em>Solutions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cultivation</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation
+	 * @return the meta object for the containment reference list '<em>Solutions</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getSolutions()
+	 * @see #getUser()
 	 * @generated
 	 */
-	EClass getCultivation();
+	EReference getUser_Solutions();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getPlant <em>Plant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.User#getProblems <em>Problems</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Plant</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getPlant()
-	 * @see #getCultivation()
+	 * @return the meta object for the containment reference list '<em>Problems</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getProblems()
+	 * @see #getUser()
 	 * @generated
 	 */
-	EReference getCultivation_Plant();
+	EReference getUser_Problems();
 
 	/**
-	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getStartDate <em>Start Date</em>}'.
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.User#getItemProcess <em>Item Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Item Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getItemProcess()
+	 * @see #getUser()
+	 * @generated
+	 */
+	EReference getUser_ItemProcess();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.User#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getProcess()
+	 * @see #getUser()
+	 * @generated
+	 */
+	EReference getUser_Process();
+
+	/**
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.User#getFullname <em>Fullname</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fullname</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.User#getFullname()
+	 * @see #getUser()
+	 * @generated
+	 */
+	EAttribute getUser_Fullname();
+
+	/**
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process
+	 * @generated
+	 */
+	EClass getProcess();
+
+	/**
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Process#getItemProcess <em>Item Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Item Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getItemProcess()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EReference getProcess_ItemProcess();
+
+	/**
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Process#getStartDate <em>Start Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start Date</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getStartDate()
-	 * @see #getCultivation()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getStartDate()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EAttribute getCultivation_StartDate();
+	EAttribute getProcess_StartDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getEndDate <em>End Date</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Process#getEndDate <em>End Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>End Date</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getEndDate()
-	 * @see #getCultivation()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getEndDate()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EAttribute getCultivation_EndDate();
+	EAttribute getProcess_EndDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getStatus <em>Status</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Process#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Status</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getStatus()
-	 * @see #getCultivation()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getStatus()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EAttribute getCultivation_Status();
+	EAttribute getProcess_Status();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getField <em>Field</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Process#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Field</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getField()
-	 * @see #getCultivation()
+	 * @return the meta object for the reference '<em>Location</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getLocation()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EReference getCultivation_Field();
+	EReference getProcess_Location();
 
 	/**
-	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation#getWeight <em>Weight</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Process#getWeight <em>Weight</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Weight</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation#getWeight()
-	 * @see #getCultivation()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getWeight()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EAttribute getCultivation_Weight();
+	EAttribute getProcess_Weight();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.PlantSpecies <em>Plant Species</em>}'.
+	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.cooltivar.cooltivar.Process#getActionHistory <em>Action History</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plant Species</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.PlantSpecies
+	 * @return the meta object for the containment reference list '<em>Action History</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#getActionHistory()
+	 * @see #getProcess()
 	 * @generated
 	 */
-	EClass getPlantSpecies();
+	EReference getProcess_ActionHistory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.PlantSpecies#getPlantGenus <em>Plant Genus</em>}'.
+	 * Returns the meta object for the '{@link it.disim.univaq.cooltivar.cooltivar.Process#checkFutureDate() <em>Check Future Date</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Plant Genus</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.PlantSpecies#getPlantGenus()
-	 * @see #getPlantSpecies()
+	 * @return the meta object for the '<em>Check Future Date</em>' operation.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process#checkFutureDate()
 	 * @generated
 	 */
-	EAttribute getPlantSpecies_PlantGenus();
+	EOperation getProcess__CheckFutureDate();
+
+	/**
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.ItemSpecies <em>Item Species</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Item Species</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemSpecies
+	 * @generated
+	 */
+	EClass getItemSpecies();
 
 	/**
 	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Action <em>Action</em>}'.
@@ -965,17 +1218,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAction();
-
-	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Action#getRemedy <em>Remedy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Remedy</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getRemedy()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EReference getAction_Remedy();
 
 	/**
 	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Action#getStartDate <em>Start Date</em>}'.
@@ -1000,130 +1242,206 @@ public interface ModelPackage extends EPackage {
 	EAttribute getAction_EndDate();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Action#getThreat <em>Threat</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Action#getProblem <em>Problem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Threat</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getThreat()
+	 * @return the meta object for the reference '<em>Problem</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getProblem()
 	 * @see #getAction()
 	 * @generated
 	 */
-	EReference getAction_Threat();
+	EReference getAction_Problem();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Threat <em>Threat</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Action#getSolution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Threat</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Threat
+	 * @return the meta object for the reference '<em>Solution</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getSolution()
+	 * @see #getAction()
 	 * @generated
 	 */
-	EClass getThreat();
+	EReference getAction_Solution();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Threat#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Action#getActionsType <em>Actions Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Actions Type</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getActionsType()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_ActionsType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Action#getActionStatus <em>Action Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action Status</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getActionStatus()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_ActionStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Action#getFullDescription <em>Full Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Full Description</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getFullDescription()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_FullDescription();
+
+	/**
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Action#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Action#getProcess()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Process();
+
+	/**
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Problem <em>Problem</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Problem</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Problem
+	 * @generated
+	 */
+	EClass getProblem();
+
+	/**
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Problem#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Author</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Threat#getAuthor()
-	 * @see #getThreat()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Problem#getAuthor()
+	 * @see #getProblem()
 	 * @generated
 	 */
-	EReference getThreat_Author();
+	EReference getProblem_Author();
 
 	/**
-	 * Returns the meta object for the reference list '{@link it.disim.univaq.cooltivar.cooltivar.Threat#getRemedies <em>Remedies</em>}'.
+	 * Returns the meta object for the reference list '{@link it.disim.univaq.cooltivar.cooltivar.Problem#getSolutions <em>Solutions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Remedies</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Threat#getRemedies()
-	 * @see #getThreat()
+	 * @return the meta object for the reference list '<em>Solutions</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Problem#getSolutions()
+	 * @see #getProblem()
 	 * @generated
 	 */
-	EReference getThreat_Remedies();
+	EReference getProblem_Solutions();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Threat#getCultivars <em>Cultivars</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Problem#getProcess <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Cultivars</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Threat#getCultivars()
-	 * @see #getThreat()
+	 * @return the meta object for the reference '<em>Process</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Problem#getProcess()
+	 * @see #getProblem()
 	 * @generated
 	 */
-	EReference getThreat_Cultivars();
+	EReference getProblem_Process();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Remedy <em>Remedy</em>}'.
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Solution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remedy</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Remedy
+	 * @return the meta object for class '<em>Solution</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Solution
 	 * @generated
 	 */
-	EClass getRemedy();
+	EClass getSolution();
 
 	/**
-	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Remedy#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the reference '{@link it.disim.univaq.cooltivar.cooltivar.Solution#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Author</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Remedy#getAuthor()
-	 * @see #getRemedy()
+	 * @see it.disim.univaq.cooltivar.cooltivar.Solution#getAuthor()
+	 * @see #getSolution()
 	 * @generated
 	 */
-	EReference getRemedy_Author();
+	EReference getSolution_Author();
 
 	/**
-	 * Returns the meta object for the reference list '{@link it.disim.univaq.cooltivar.cooltivar.Remedy#getThreats <em>Threats</em>}'.
+	 * Returns the meta object for the reference list '{@link it.disim.univaq.cooltivar.cooltivar.Solution#getProblems <em>Problems</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Threats</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Remedy#getThreats()
-	 * @see #getRemedy()
+	 * @return the meta object for the reference list '<em>Problems</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Solution#getProblems()
+	 * @see #getSolution()
 	 * @generated
 	 */
-	EReference getRemedy_Threats();
+	EReference getSolution_Problems();
 
 	/**
-	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Field <em>Field</em>}'.
+	 * Returns the meta object for class '{@link it.disim.univaq.cooltivar.cooltivar.Location <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Field</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Field
+	 * @return the meta object for class '<em>Location</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Location
 	 * @generated
 	 */
-	EClass getField();
+	EClass getLocation();
 
 	/**
-	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.cultivationStatus <em>cultivation Status</em>}'.
+	 * Returns the meta object for the attribute '{@link it.disim.univaq.cooltivar.cooltivar.Location#getCoordinates <em>Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>cultivation Status</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.cultivationStatus
+	 * @return the meta object for the attribute '<em>Coordinates</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.Location#getCoordinates()
+	 * @see #getLocation()
 	 * @generated
 	 */
-	EEnum getcultivationStatus();
+	EAttribute getLocation_Coordinates();
 
 	/**
-	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.actionStatus <em>action Status</em>}'.
+	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.ProcessStatus <em>Process Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>action Status</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.actionStatus
+	 * @return the meta object for enum '<em>Process Status</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ProcessStatus
 	 * @generated
 	 */
-	EEnum getactionStatus();
+	EEnum getProcessStatus();
 
 	/**
-	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.actionType <em>action Type</em>}'.
+	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.ActionStatus <em>Action Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>action Type</em>'.
-	 * @see it.disim.univaq.cooltivar.cooltivar.actionType
+	 * @return the meta object for enum '<em>Action Status</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ActionStatus
 	 * @generated
 	 */
-	EEnum getactionType();
+	EEnum getActionStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.ActionType <em>Action Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Action Type</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.ActionType
+	 * @generated
+	 */
+	EEnum getActionType();
+
+	/**
+	 * Returns the meta object for enum '{@link it.disim.univaq.cooltivar.cooltivar.UserType <em>User Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>User Type</em>'.
+	 * @see it.disim.univaq.cooltivar.cooltivar.UserType
+	 * @generated
+	 */
+	EEnum getUserType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1159,6 +1477,14 @@ public interface ModelPackage extends EPackage {
 		EClass APPLICATION = eINSTANCE.getApplication();
 
 		/**
+		 * The meta object literal for the '<em><b>User</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__USER = eINSTANCE.getApplication_User();
+
+		/**
 		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.DescriptedImpl <em>Descripted</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1185,30 +1511,38 @@ public interface ModelPackage extends EPackage {
 		EAttribute DESCRIPTED__NAME = eINSTANCE.getDescripted_Name();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.CultivarImpl <em>Cultivar</em>}' class.
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ItemProcessImpl <em>Item Process</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.CultivarImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getCultivar()
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ItemProcessImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getItemProcess()
 		 * @generated
 		 */
-		EClass CULTIVAR = eINSTANCE.getCultivar();
+		EClass ITEM_PROCESS = eINSTANCE.getItemProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Plant Species</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Item Process Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CULTIVAR__PLANT_SPECIES = eINSTANCE.getCultivar_PlantSpecies();
+		EReference ITEM_PROCESS__ITEM_PROCESS_TYPE = eINSTANCE.getItemProcess_ItemProcessType();
 
 		/**
-		 * The meta object literal for the '<em><b>Threats</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Problems</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CULTIVAR__THREATS = eINSTANCE.getCultivar_Threats();
+		EReference ITEM_PROCESS__PROBLEMS = eINSTANCE.getItemProcess_Problems();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ITEM_PROCESS__AUTHOR = eINSTANCE.getItemProcess_Author();
 
 		/**
 		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl <em>User</em>}' class.
@@ -1261,30 +1595,70 @@ public interface ModelPackage extends EPackage {
 		EAttribute USER__SURNAME = eINSTANCE.getUser_Surname();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>User Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference USER__FIELDS = eINSTANCE.getUser_Fields();
+		EAttribute USER__USER_TYPE = eINSTANCE.getUser_UserType();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.CultivationImpl <em>Cultivation</em>}' class.
+		 * The meta object literal for the '<em><b>Solutions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.CultivationImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getCultivation()
 		 * @generated
 		 */
-		EClass CULTIVATION = eINSTANCE.getCultivation();
+		EReference USER__SOLUTIONS = eINSTANCE.getUser_Solutions();
 
 		/**
-		 * The meta object literal for the '<em><b>Plant</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Problems</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CULTIVATION__PLANT = eINSTANCE.getCultivation_Plant();
+		EReference USER__PROBLEMS = eINSTANCE.getUser_Problems();
+
+		/**
+		 * The meta object literal for the '<em><b>Item Process</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER__ITEM_PROCESS = eINSTANCE.getUser_ItemProcess();
+
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER__PROCESS = eINSTANCE.getUser_Process();
+
+		/**
+		 * The meta object literal for the '<em><b>Fullname</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER__FULLNAME = eINSTANCE.getUser_Fullname();
+
+		/**
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ProcessImpl <em>Process</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ProcessImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProcess()
+		 * @generated
+		 */
+		EClass PROCESS = eINSTANCE.getProcess();
+
+		/**
+		 * The meta object literal for the '<em><b>Item Process</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESS__ITEM_PROCESS = eINSTANCE.getProcess_ItemProcess();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
@@ -1292,7 +1666,7 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CULTIVATION__START_DATE = eINSTANCE.getCultivation_StartDate();
+		EAttribute PROCESS__START_DATE = eINSTANCE.getProcess_StartDate();
 
 		/**
 		 * The meta object literal for the '<em><b>End Date</b></em>' attribute feature.
@@ -1300,7 +1674,7 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CULTIVATION__END_DATE = eINSTANCE.getCultivation_EndDate();
+		EAttribute PROCESS__END_DATE = eINSTANCE.getProcess_EndDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
@@ -1308,15 +1682,15 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CULTIVATION__STATUS = eINSTANCE.getCultivation_Status();
+		EAttribute PROCESS__STATUS = eINSTANCE.getProcess_Status();
 
 		/**
-		 * The meta object literal for the '<em><b>Field</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CULTIVATION__FIELD = eINSTANCE.getCultivation_Field();
+		EReference PROCESS__LOCATION = eINSTANCE.getProcess_Location();
 
 		/**
 		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
@@ -1324,25 +1698,33 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CULTIVATION__WEIGHT = eINSTANCE.getCultivation_Weight();
+		EAttribute PROCESS__WEIGHT = eINSTANCE.getProcess_Weight();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.PlantSpeciesImpl <em>Plant Species</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.PlantSpeciesImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getPlantSpecies()
-		 * @generated
-		 */
-		EClass PLANT_SPECIES = eINSTANCE.getPlantSpecies();
-
-		/**
-		 * The meta object literal for the '<em><b>Plant Genus</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Action History</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLANT_SPECIES__PLANT_GENUS = eINSTANCE.getPlantSpecies_PlantGenus();
+		EReference PROCESS__ACTION_HISTORY = eINSTANCE.getProcess_ActionHistory();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Future Date</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROCESS___CHECK_FUTURE_DATE = eINSTANCE.getProcess__CheckFutureDate();
+
+		/**
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ItemSpeciesImpl <em>Item Species</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ItemSpeciesImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getItemSpecies()
+		 * @generated
+		 */
+		EClass ITEM_SPECIES = eINSTANCE.getItemSpecies();
 
 		/**
 		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl <em>Action</em>}' class.
@@ -1353,14 +1735,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
-
-		/**
-		 * The meta object literal for the '<em><b>Remedy</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION__REMEDY = eINSTANCE.getAction_Remedy();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
@@ -1379,22 +1753,62 @@ public interface ModelPackage extends EPackage {
 		EAttribute ACTION__END_DATE = eINSTANCE.getAction_EndDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Threat</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Problem</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTION__THREAT = eINSTANCE.getAction_Threat();
+		EReference ACTION__PROBLEM = eINSTANCE.getAction_Problem();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ThreatImpl <em>Threat</em>}' class.
+		 * The meta object literal for the '<em><b>Solution</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ThreatImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getThreat()
 		 * @generated
 		 */
-		EClass THREAT = eINSTANCE.getThreat();
+		EReference ACTION__SOLUTION = eINSTANCE.getAction_Solution();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__ACTIONS_TYPE = eINSTANCE.getAction_ActionsType();
+
+		/**
+		 * The meta object literal for the '<em><b>Action Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__ACTION_STATUS = eINSTANCE.getAction_ActionStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Full Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__FULL_DESCRIPTION = eINSTANCE.getAction_FullDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__PROCESS = eINSTANCE.getAction_Process();
+
+		/**
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.ProblemImpl <em>Problem</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ProblemImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProblem()
+		 * @generated
+		 */
+		EClass PROBLEM = eINSTANCE.getProblem();
 
 		/**
 		 * The meta object literal for the '<em><b>Author</b></em>' reference feature.
@@ -1402,33 +1816,33 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT__AUTHOR = eINSTANCE.getThreat_Author();
+		EReference PROBLEM__AUTHOR = eINSTANCE.getProblem_Author();
 
 		/**
-		 * The meta object literal for the '<em><b>Remedies</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Solutions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT__REMEDIES = eINSTANCE.getThreat_Remedies();
+		EReference PROBLEM__SOLUTIONS = eINSTANCE.getProblem_Solutions();
 
 		/**
-		 * The meta object literal for the '<em><b>Cultivars</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Process</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT__CULTIVARS = eINSTANCE.getThreat_Cultivars();
+		EReference PROBLEM__PROCESS = eINSTANCE.getProblem_Process();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.RemedyImpl <em>Remedy</em>}' class.
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.SolutionImpl <em>Solution</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.RemedyImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getRemedy()
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.SolutionImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getSolution()
 		 * @generated
 		 */
-		EClass REMEDY = eINSTANCE.getRemedy();
+		EClass SOLUTION = eINSTANCE.getSolution();
 
 		/**
 		 * The meta object literal for the '<em><b>Author</b></em>' reference feature.
@@ -1436,55 +1850,73 @@ public interface ModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMEDY__AUTHOR = eINSTANCE.getRemedy_Author();
+		EReference SOLUTION__AUTHOR = eINSTANCE.getSolution_Author();
 
 		/**
-		 * The meta object literal for the '<em><b>Threats</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Problems</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMEDY__THREATS = eINSTANCE.getRemedy_Threats();
+		EReference SOLUTION__PROBLEMS = eINSTANCE.getSolution_Problems();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.FieldImpl <em>Field</em>}' class.
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.impl.LocationImpl <em>Location</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.FieldImpl
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getField()
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.LocationImpl
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getLocation()
 		 * @generated
 		 */
-		EClass FIELD = eINSTANCE.getField();
+		EClass LOCATION = eINSTANCE.getLocation();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.cultivationStatus <em>cultivation Status</em>}' enum.
+		 * The meta object literal for the '<em><b>Coordinates</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.cultivationStatus
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getcultivationStatus()
 		 * @generated
 		 */
-		EEnum CULTIVATION_STATUS = eINSTANCE.getcultivationStatus();
+		EAttribute LOCATION__COORDINATES = eINSTANCE.getLocation_Coordinates();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.actionStatus <em>action Status</em>}' enum.
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.ProcessStatus <em>Process Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.actionStatus
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getactionStatus()
+		 * @see it.disim.univaq.cooltivar.cooltivar.ProcessStatus
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getProcessStatus()
 		 * @generated
 		 */
-		EEnum ACTION_STATUS = eINSTANCE.getactionStatus();
+		EEnum PROCESS_STATUS = eINSTANCE.getProcessStatus();
 
 		/**
-		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.actionType <em>action Type</em>}' enum.
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.ActionStatus <em>Action Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see it.disim.univaq.cooltivar.cooltivar.actionType
-		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getactionType()
+		 * @see it.disim.univaq.cooltivar.cooltivar.ActionStatus
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getActionStatus()
 		 * @generated
 		 */
-		EEnum ACTION_TYPE = eINSTANCE.getactionType();
+		EEnum ACTION_STATUS = eINSTANCE.getActionStatus();
+
+		/**
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.ActionType <em>Action Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see it.disim.univaq.cooltivar.cooltivar.ActionType
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getActionType()
+		 * @generated
+		 */
+		EEnum ACTION_TYPE = eINSTANCE.getActionType();
+
+		/**
+		 * The meta object literal for the '{@link it.disim.univaq.cooltivar.cooltivar.UserType <em>User Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see it.disim.univaq.cooltivar.cooltivar.UserType
+		 * @see it.disim.univaq.cooltivar.cooltivar.impl.ModelPackageImpl#getUserType()
+		 * @generated
+		 */
+		EEnum USER_TYPE = eINSTANCE.getUserType();
 
 	}
 

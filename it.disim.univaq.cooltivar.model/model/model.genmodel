@@ -63,6 +63,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/weight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Process/actionHistory"/>
+      <genOperations ecoreOperation="model.ecore#//Process/checkFutureDate"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ItemSpecies"/>
     <genClasses ecoreClass="model.ecore#//Action">
@@ -72,6 +73,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/solution"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/actionsType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/actionStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Action/fullDescription"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Action/process"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Problem">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/author"/>

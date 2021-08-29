@@ -40,13 +40,13 @@ public interface ModelFactory extends EFactory {
 	Descripted createDescripted();
 
 	/**
-	 * Returns a new object of class '<em>Cultivar</em>'.
+	 * Returns a new object of class '<em>Item Process</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cultivar</em>'.
+	 * @return a new object of class '<em>Item Process</em>'.
 	 * @generated
 	 */
-	Cultivar createCultivar();
+	ItemProcess createItemProcess();
 
 	/**
 	 * Returns a new object of class '<em>User</em>'.
@@ -58,22 +58,22 @@ public interface ModelFactory extends EFactory {
 	User createUser();
 
 	/**
-	 * Returns a new object of class '<em>Cultivation</em>'.
+	 * Returns a new object of class '<em>Process</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cultivation</em>'.
+	 * @return a new object of class '<em>Process</em>'.
 	 * @generated
 	 */
-	Cultivation createCultivation();
+	Process createProcess();
 
 	/**
-	 * Returns a new object of class '<em>Plant Species</em>'.
+	 * Returns a new object of class '<em>Item Species</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plant Species</em>'.
+	 * @return a new object of class '<em>Item Species</em>'.
 	 * @generated
 	 */
-	PlantSpecies createPlantSpecies();
+	ItemSpecies createItemSpecies();
 
 	/**
 	 * Returns a new object of class '<em>Action</em>'.
@@ -85,31 +85,31 @@ public interface ModelFactory extends EFactory {
 	Action createAction();
 
 	/**
-	 * Returns a new object of class '<em>Threat</em>'.
+	 * Returns a new object of class '<em>Problem</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Threat</em>'.
+	 * @return a new object of class '<em>Problem</em>'.
 	 * @generated
 	 */
-	Threat createThreat();
+	Problem createProblem();
 
 	/**
-	 * Returns a new object of class '<em>Remedy</em>'.
+	 * Returns a new object of class '<em>Solution</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remedy</em>'.
+	 * @return a new object of class '<em>Solution</em>'.
 	 * @generated
 	 */
-	Remedy createRemedy();
+	Solution createSolution();
 
 	/**
-	 * Returns a new object of class '<em>Field</em>'.
+	 * Returns a new object of class '<em>Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Field</em>'.
+	 * @return a new object of class '<em>Location</em>'.
 	 * @generated
 	 */
-	Field createField();
+	Location createLocation();
 
 	/**
 	 * Returns the package supported by this factory.

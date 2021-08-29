@@ -2,7 +2,16 @@
  */
 package it.disim.univaq.cooltivar.cooltivar.util;
 
-import it.disim.univaq.cooltivar.cooltivar.*;
+import it.disim.univaq.cooltivar.cooltivar.Action;
+import it.disim.univaq.cooltivar.cooltivar.Application;
+import it.disim.univaq.cooltivar.cooltivar.Descripted;
+import it.disim.univaq.cooltivar.cooltivar.ItemProcess;
+import it.disim.univaq.cooltivar.cooltivar.ItemSpecies;
+import it.disim.univaq.cooltivar.cooltivar.Location;
+import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
+import it.disim.univaq.cooltivar.cooltivar.User;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -80,9 +89,11 @@ public class ModelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ModelPackage.CULTIVAR: {
-			Cultivar cultivar = (Cultivar) theEObject;
-			T result = caseCultivar(cultivar);
+		case ModelPackage.ITEM_PROCESS: {
+			ItemProcess itemProcess = (ItemProcess) theEObject;
+			T result = caseItemProcess(itemProcess);
+			if (result == null)
+				result = caseDescripted(itemProcess);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -91,23 +102,25 @@ public class ModelSwitch<T> extends Switch<T> {
 			User user = (User) theEObject;
 			T result = caseUser(user);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ModelPackage.CULTIVATION: {
-			Cultivation cultivation = (Cultivation) theEObject;
-			T result = caseCultivation(cultivation);
-			if (result == null)
-				result = caseDescripted(cultivation);
+				result = caseDescripted(user);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ModelPackage.PLANT_SPECIES: {
-			PlantSpecies plantSpecies = (PlantSpecies) theEObject;
-			T result = casePlantSpecies(plantSpecies);
+		case ModelPackage.PROCESS: {
+			it.disim.univaq.cooltivar.cooltivar.Process process = (it.disim.univaq.cooltivar.cooltivar.Process) theEObject;
+			T result = caseProcess(process);
 			if (result == null)
-				result = caseDescripted(plantSpecies);
+				result = caseDescripted(process);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ModelPackage.ITEM_SPECIES: {
+			ItemSpecies itemSpecies = (ItemSpecies) theEObject;
+			T result = caseItemSpecies(itemSpecies);
+			if (result == null)
+				result = caseDescripted(itemSpecies);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -121,29 +134,29 @@ public class ModelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ModelPackage.THREAT: {
-			Threat threat = (Threat) theEObject;
-			T result = caseThreat(threat);
+		case ModelPackage.PROBLEM: {
+			Problem problem = (Problem) theEObject;
+			T result = caseProblem(problem);
 			if (result == null)
-				result = caseDescripted(threat);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ModelPackage.REMEDY: {
-			Remedy remedy = (Remedy) theEObject;
-			T result = caseRemedy(remedy);
-			if (result == null)
-				result = caseDescripted(remedy);
+				result = caseDescripted(problem);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ModelPackage.FIELD: {
-			Field field = (Field) theEObject;
-			T result = caseField(field);
+		case ModelPackage.SOLUTION: {
+			Solution solution = (Solution) theEObject;
+			T result = caseSolution(solution);
 			if (result == null)
-				result = caseDescripted(field);
+				result = caseDescripted(solution);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ModelPackage.LOCATION: {
+			Location location = (Location) theEObject;
+			T result = caseLocation(location);
+			if (result == null)
+				result = caseDescripted(location);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -184,17 +197,17 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cultivar</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Item Process</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cultivar</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Item Process</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCultivar(Cultivar object) {
+	public T caseItemProcess(ItemProcess object) {
 		return null;
 	}
 
@@ -214,32 +227,32 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cultivation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cultivation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCultivation(Cultivation object) {
+	public T caseProcess(it.disim.univaq.cooltivar.cooltivar.Process object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plant Species</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Item Species</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plant Species</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Item Species</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlantSpecies(PlantSpecies object) {
+	public T caseItemSpecies(ItemSpecies object) {
 		return null;
 	}
 
@@ -259,47 +272,47 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Threat</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Problem</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Threat</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Problem</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseThreat(Threat object) {
+	public T caseProblem(Problem object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remedy</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Solution</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remedy</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Solution</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemedy(Remedy object) {
+	public T caseSolution(Solution object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Location</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseField(Field object) {
+	public T caseLocation(Location object) {
 		return null;
 	}
 

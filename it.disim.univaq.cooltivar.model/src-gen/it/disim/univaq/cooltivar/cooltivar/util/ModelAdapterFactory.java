@@ -2,7 +2,16 @@
  */
 package it.disim.univaq.cooltivar.cooltivar.util;
 
-import it.disim.univaq.cooltivar.cooltivar.*;
+import it.disim.univaq.cooltivar.cooltivar.Action;
+import it.disim.univaq.cooltivar.cooltivar.Application;
+import it.disim.univaq.cooltivar.cooltivar.Descripted;
+import it.disim.univaq.cooltivar.cooltivar.ItemProcess;
+import it.disim.univaq.cooltivar.cooltivar.ItemSpecies;
+import it.disim.univaq.cooltivar.cooltivar.Location;
+import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
+import it.disim.univaq.cooltivar.cooltivar.User;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -77,8 +86,8 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCultivar(Cultivar object) {
-			return createCultivarAdapter();
+		public Adapter caseItemProcess(ItemProcess object) {
+			return createItemProcessAdapter();
 		}
 
 		@Override
@@ -87,13 +96,13 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCultivation(Cultivation object) {
-			return createCultivationAdapter();
+		public Adapter caseProcess(it.disim.univaq.cooltivar.cooltivar.Process object) {
+			return createProcessAdapter();
 		}
 
 		@Override
-		public Adapter casePlantSpecies(PlantSpecies object) {
-			return createPlantSpeciesAdapter();
+		public Adapter caseItemSpecies(ItemSpecies object) {
+			return createItemSpeciesAdapter();
 		}
 
 		@Override
@@ -102,18 +111,18 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseThreat(Threat object) {
-			return createThreatAdapter();
+		public Adapter caseProblem(Problem object) {
+			return createProblemAdapter();
 		}
 
 		@Override
-		public Adapter caseRemedy(Remedy object) {
-			return createRemedyAdapter();
+		public Adapter caseSolution(Solution object) {
+			return createSolutionAdapter();
 		}
 
 		@Override
-		public Adapter caseField(Field object) {
-			return createFieldAdapter();
+		public Adapter caseLocation(Location object) {
+			return createLocationAdapter();
 		}
 
 		@Override
@@ -164,16 +173,16 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Cultivar <em>Cultivar</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.ItemProcess <em>Item Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivar
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemProcess
 	 * @generated
 	 */
-	public Adapter createCultivarAdapter() {
+	public Adapter createItemProcessAdapter() {
 		return null;
 	}
 
@@ -192,30 +201,30 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Cultivation <em>Cultivation</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Process <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Cultivation
+	 * @see it.disim.univaq.cooltivar.cooltivar.Process
 	 * @generated
 	 */
-	public Adapter createCultivationAdapter() {
+	public Adapter createProcessAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.PlantSpecies <em>Plant Species</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.ItemSpecies <em>Item Species</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.PlantSpecies
+	 * @see it.disim.univaq.cooltivar.cooltivar.ItemSpecies
 	 * @generated
 	 */
-	public Adapter createPlantSpeciesAdapter() {
+	public Adapter createItemSpeciesAdapter() {
 		return null;
 	}
 
@@ -234,44 +243,44 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Threat <em>Threat</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Problem <em>Problem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Threat
+	 * @see it.disim.univaq.cooltivar.cooltivar.Problem
 	 * @generated
 	 */
-	public Adapter createThreatAdapter() {
+	public Adapter createProblemAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Remedy <em>Remedy</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Solution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Remedy
+	 * @see it.disim.univaq.cooltivar.cooltivar.Solution
 	 * @generated
 	 */
-	public Adapter createRemedyAdapter() {
+	public Adapter createSolutionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Field <em>Field</em>}'.
+	 * Creates a new adapter for an object of class '{@link it.disim.univaq.cooltivar.cooltivar.Location <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see it.disim.univaq.cooltivar.cooltivar.Field
+	 * @see it.disim.univaq.cooltivar.cooltivar.Location
 	 * @generated
 	 */
-	public Adapter createFieldAdapter() {
+	public Adapter createLocationAdapter() {
 		return null;
 	}
 

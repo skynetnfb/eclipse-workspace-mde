@@ -44,17 +44,20 @@
           startDate="0006-07-14T00:00:00.000+0100"
           endDate="0006-07-15T00:00:00.000+0100"
           problem="//@user.0/@problems.0"
-          actionsType="PROBLEM"/>
+          actionsType="PROBLEM"
+          process="//@user.1/@process.0"/>
       <actionHistory
           name="irrigazione"
           startDate="0006-07-14T00:00:00.000+0100"
-          endDate="0006-07-15T00:00:00.000+0100"/>
+          endDate="0006-07-15T00:00:00.000+0100"
+          process="//@user.1/@process.0"/>
       <actionHistory
           name="trattamento afidi"
           startDate="0006-07-13T00:00:00.000+0100"
           endDate="0007-08-14T00:00:00.000+0100"
           solution="//@user.0/@solutions.0"
-          actionsType="SOLUTION"/>
+          actionsType="SOLUTION"
+          process="//@user.1/@process.0"/>
     </process>
   </user>
 </cooltivar:Application>

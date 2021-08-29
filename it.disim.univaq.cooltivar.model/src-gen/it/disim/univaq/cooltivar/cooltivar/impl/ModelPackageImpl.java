@@ -3,26 +3,31 @@
 package it.disim.univaq.cooltivar.cooltivar.impl;
 
 import it.disim.univaq.cooltivar.cooltivar.Action;
+import it.disim.univaq.cooltivar.cooltivar.ActionStatus;
+import it.disim.univaq.cooltivar.cooltivar.ActionType;
 import it.disim.univaq.cooltivar.cooltivar.Application;
-import it.disim.univaq.cooltivar.cooltivar.Cultivar;
-import it.disim.univaq.cooltivar.cooltivar.Cultivation;
 import it.disim.univaq.cooltivar.cooltivar.Descripted;
-import it.disim.univaq.cooltivar.cooltivar.Field;
+import it.disim.univaq.cooltivar.cooltivar.ItemProcess;
+import it.disim.univaq.cooltivar.cooltivar.ItemSpecies;
+import it.disim.univaq.cooltivar.cooltivar.Location;
 import it.disim.univaq.cooltivar.cooltivar.ModelFactory;
 import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
-import it.disim.univaq.cooltivar.cooltivar.PlantSpecies;
-import it.disim.univaq.cooltivar.cooltivar.Remedy;
-import it.disim.univaq.cooltivar.cooltivar.Threat;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.ProcessStatus;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
 import it.disim.univaq.cooltivar.cooltivar.User;
-import it.disim.univaq.cooltivar.cooltivar.actionStatus;
-import it.disim.univaq.cooltivar.cooltivar.actionType;
-import it.disim.univaq.cooltivar.cooltivar.cultivationStatus;
+import it.disim.univaq.cooltivar.cooltivar.UserType;
+
+import it.disim.univaq.cooltivar.cooltivar.util.ModelValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -52,7 +57,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cultivarEClass = null;
+	private EClass itemProcessEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,14 +71,14 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cultivationEClass = null;
+	private EClass processEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass plantSpeciesEClass = null;
+	private EClass itemSpeciesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,28 +92,28 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass threatEClass = null;
+	private EClass problemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass remedyEClass = null;
+	private EClass solutionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fieldEClass = null;
+	private EClass locationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum cultivationStatusEEnum = null;
+	private EEnum processStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +128,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EEnum actionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum userTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -180,6 +192,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Initialize created meta-data
 		theModelPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put(theModelPackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return ModelValidator.INSTANCE;
+			}
+		});
+
 		// Mark meta-data to indicate it can't be changed
 		theModelPackage.freeze();
 
@@ -195,6 +214,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EClass getApplication() {
 		return applicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplication_User() {
+		return (EReference) applicationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -229,8 +257,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCultivar() {
-		return cultivarEClass;
+	public EClass getItemProcess() {
+		return itemProcessEClass;
 	}
 
 	/**
@@ -238,8 +266,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCultivar_PlantSpecies() {
-		return (EReference) cultivarEClass.getEStructuralFeatures().get(0);
+	public EReference getItemProcess_ItemProcessType() {
+		return (EReference) itemProcessEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,8 +275,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCultivar_Threats() {
-		return (EReference) cultivarEClass.getEStructuralFeatures().get(1);
+	public EReference getItemProcess_Problems() {
+		return (EReference) itemProcessEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getItemProcess_Author() {
+		return (EReference) itemProcessEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -310,8 +347,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUser_Fields() {
-		return (EReference) userEClass.getEStructuralFeatures().get(5);
+	public EAttribute getUser_UserType() {
+		return (EAttribute) userEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -319,8 +356,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCultivation() {
-		return cultivationEClass;
+	public EReference getUser_Solutions() {
+		return (EReference) userEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -328,8 +365,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCultivation_Plant() {
-		return (EReference) cultivationEClass.getEStructuralFeatures().get(0);
+	public EReference getUser_Problems() {
+		return (EReference) userEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -337,8 +374,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCultivation_StartDate() {
-		return (EAttribute) cultivationEClass.getEStructuralFeatures().get(1);
+	public EReference getUser_ItemProcess() {
+		return (EReference) userEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -346,8 +383,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCultivation_EndDate() {
-		return (EAttribute) cultivationEClass.getEStructuralFeatures().get(2);
+	public EReference getUser_Process() {
+		return (EReference) userEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -355,8 +392,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCultivation_Status() {
-		return (EAttribute) cultivationEClass.getEStructuralFeatures().get(3);
+	public EAttribute getUser_Fullname() {
+		return (EAttribute) userEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -364,8 +401,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCultivation_Field() {
-		return (EReference) cultivationEClass.getEStructuralFeatures().get(4);
+	public EClass getProcess() {
+		return processEClass;
 	}
 
 	/**
@@ -373,8 +410,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCultivation_Weight() {
-		return (EAttribute) cultivationEClass.getEStructuralFeatures().get(5);
+	public EReference getProcess_ItemProcess() {
+		return (EReference) processEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -382,8 +419,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPlantSpecies() {
-		return plantSpeciesEClass;
+	public EAttribute getProcess_StartDate() {
+		return (EAttribute) processEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -391,8 +428,62 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlantSpecies_PlantGenus() {
-		return (EAttribute) plantSpeciesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProcess_EndDate() {
+		return (EAttribute) processEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProcess_Status() {
+		return (EAttribute) processEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProcess_Location() {
+		return (EReference) processEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProcess_Weight() {
+		return (EAttribute) processEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProcess_ActionHistory() {
+		return (EReference) processEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getProcess__CheckFutureDate() {
+		return processEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getItemSpecies() {
+		return itemSpeciesEClass;
 	}
 
 	/**
@@ -409,17 +500,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAction_Remedy() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAction_StartDate() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -428,7 +510,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getAction_EndDate() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -436,7 +518,16 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAction_Threat() {
+	public EReference getAction_Problem() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAction_Solution() {
 		return (EReference) actionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -445,8 +536,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getThreat() {
-		return threatEClass;
+	public EAttribute getAction_ActionsType() {
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -454,8 +545,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThreat_Author() {
-		return (EReference) threatEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAction_ActionStatus() {
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -463,8 +554,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThreat_Remedies() {
-		return (EReference) threatEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAction_FullDescription() {
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -472,8 +563,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThreat_Cultivars() {
-		return (EReference) threatEClass.getEStructuralFeatures().get(2);
+	public EReference getAction_Process() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -481,8 +572,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemedy() {
-		return remedyEClass;
+	public EClass getProblem() {
+		return problemEClass;
 	}
 
 	/**
@@ -490,8 +581,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemedy_Author() {
-		return (EReference) remedyEClass.getEStructuralFeatures().get(0);
+	public EReference getProblem_Author() {
+		return (EReference) problemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -499,8 +590,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemedy_Threats() {
-		return (EReference) remedyEClass.getEStructuralFeatures().get(1);
+	public EReference getProblem_Solutions() {
+		return (EReference) problemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -508,8 +599,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getField() {
-		return fieldEClass;
+	public EReference getProblem_Process() {
+		return (EReference) problemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -517,8 +608,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getcultivationStatus() {
-		return cultivationStatusEEnum;
+	public EClass getSolution() {
+		return solutionEClass;
 	}
 
 	/**
@@ -526,7 +617,52 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getactionStatus() {
+	public EReference getSolution_Author() {
+		return (EReference) solutionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSolution_Problems() {
+		return (EReference) solutionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLocation() {
+		return locationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocation_Coordinates() {
+		return (EAttribute) locationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getProcessStatus() {
+		return processStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getActionStatus() {
 		return actionStatusEEnum;
 	}
 
@@ -535,8 +671,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getactionType() {
+	public EEnum getActionType() {
 		return actionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getUserType() {
+		return userTypeEEnum;
 	}
 
 	/**
@@ -569,14 +714,16 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Create classes and their features
 		applicationEClass = createEClass(APPLICATION);
+		createEReference(applicationEClass, APPLICATION__USER);
 
 		descriptedEClass = createEClass(DESCRIPTED);
 		createEAttribute(descriptedEClass, DESCRIPTED__DESCRIPTION);
 		createEAttribute(descriptedEClass, DESCRIPTED__NAME);
 
-		cultivarEClass = createEClass(CULTIVAR);
-		createEReference(cultivarEClass, CULTIVAR__PLANT_SPECIES);
-		createEReference(cultivarEClass, CULTIVAR__THREATS);
+		itemProcessEClass = createEClass(ITEM_PROCESS);
+		createEReference(itemProcessEClass, ITEM_PROCESS__ITEM_PROCESS_TYPE);
+		createEReference(itemProcessEClass, ITEM_PROCESS__PROBLEMS);
+		createEReference(itemProcessEClass, ITEM_PROCESS__AUTHOR);
 
 		userEClass = createEClass(USER);
 		createEAttribute(userEClass, USER__EMAIL);
@@ -584,40 +731,52 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(userEClass, USER__UNAME);
 		createEAttribute(userEClass, USER__BIRTHDATE);
 		createEAttribute(userEClass, USER__SURNAME);
-		createEReference(userEClass, USER__FIELDS);
+		createEAttribute(userEClass, USER__USER_TYPE);
+		createEReference(userEClass, USER__SOLUTIONS);
+		createEReference(userEClass, USER__PROBLEMS);
+		createEReference(userEClass, USER__ITEM_PROCESS);
+		createEReference(userEClass, USER__PROCESS);
+		createEAttribute(userEClass, USER__FULLNAME);
 
-		cultivationEClass = createEClass(CULTIVATION);
-		createEReference(cultivationEClass, CULTIVATION__PLANT);
-		createEAttribute(cultivationEClass, CULTIVATION__START_DATE);
-		createEAttribute(cultivationEClass, CULTIVATION__END_DATE);
-		createEAttribute(cultivationEClass, CULTIVATION__STATUS);
-		createEReference(cultivationEClass, CULTIVATION__FIELD);
-		createEAttribute(cultivationEClass, CULTIVATION__WEIGHT);
+		processEClass = createEClass(PROCESS);
+		createEReference(processEClass, PROCESS__ITEM_PROCESS);
+		createEAttribute(processEClass, PROCESS__START_DATE);
+		createEAttribute(processEClass, PROCESS__END_DATE);
+		createEAttribute(processEClass, PROCESS__STATUS);
+		createEReference(processEClass, PROCESS__LOCATION);
+		createEAttribute(processEClass, PROCESS__WEIGHT);
+		createEReference(processEClass, PROCESS__ACTION_HISTORY);
+		createEOperation(processEClass, PROCESS___CHECK_FUTURE_DATE);
 
-		plantSpeciesEClass = createEClass(PLANT_SPECIES);
-		createEAttribute(plantSpeciesEClass, PLANT_SPECIES__PLANT_GENUS);
+		itemSpeciesEClass = createEClass(ITEM_SPECIES);
 
 		actionEClass = createEClass(ACTION);
-		createEReference(actionEClass, ACTION__REMEDY);
 		createEAttribute(actionEClass, ACTION__START_DATE);
 		createEAttribute(actionEClass, ACTION__END_DATE);
-		createEReference(actionEClass, ACTION__THREAT);
+		createEReference(actionEClass, ACTION__PROBLEM);
+		createEReference(actionEClass, ACTION__SOLUTION);
+		createEAttribute(actionEClass, ACTION__ACTIONS_TYPE);
+		createEAttribute(actionEClass, ACTION__ACTION_STATUS);
+		createEAttribute(actionEClass, ACTION__FULL_DESCRIPTION);
+		createEReference(actionEClass, ACTION__PROCESS);
 
-		threatEClass = createEClass(THREAT);
-		createEReference(threatEClass, THREAT__AUTHOR);
-		createEReference(threatEClass, THREAT__REMEDIES);
-		createEReference(threatEClass, THREAT__CULTIVARS);
+		problemEClass = createEClass(PROBLEM);
+		createEReference(problemEClass, PROBLEM__AUTHOR);
+		createEReference(problemEClass, PROBLEM__SOLUTIONS);
+		createEReference(problemEClass, PROBLEM__PROCESS);
 
-		remedyEClass = createEClass(REMEDY);
-		createEReference(remedyEClass, REMEDY__AUTHOR);
-		createEReference(remedyEClass, REMEDY__THREATS);
+		solutionEClass = createEClass(SOLUTION);
+		createEReference(solutionEClass, SOLUTION__AUTHOR);
+		createEReference(solutionEClass, SOLUTION__PROBLEMS);
 
-		fieldEClass = createEClass(FIELD);
+		locationEClass = createEClass(LOCATION);
+		createEAttribute(locationEClass, LOCATION__COORDINATES);
 
 		// Create enums
-		cultivationStatusEEnum = createEEnum(CULTIVATION_STATUS);
+		processStatusEEnum = createEEnum(PROCESS_STATUS);
 		actionStatusEEnum = createEEnum(ACTION_STATUS);
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
+		userTypeEEnum = createEEnum(USER_TYPE);
 	}
 
 	/**
@@ -649,16 +808,21 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		cultivationEClass.getESuperTypes().add(this.getDescripted());
-		plantSpeciesEClass.getESuperTypes().add(this.getDescripted());
+		itemProcessEClass.getESuperTypes().add(this.getDescripted());
+		userEClass.getESuperTypes().add(this.getDescripted());
+		processEClass.getESuperTypes().add(this.getDescripted());
+		itemSpeciesEClass.getESuperTypes().add(this.getDescripted());
 		actionEClass.getESuperTypes().add(this.getDescripted());
-		threatEClass.getESuperTypes().add(this.getDescripted());
-		remedyEClass.getESuperTypes().add(this.getDescripted());
-		fieldEClass.getESuperTypes().add(this.getDescripted());
+		problemEClass.getESuperTypes().add(this.getDescripted());
+		solutionEClass.getESuperTypes().add(this.getDescripted());
+		locationEClass.getESuperTypes().add(this.getDescripted());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getApplication_User(), this.getUser(), null, "user", null, 1, -1, Application.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptedEClass, Descripted.class, "Descripted", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -668,105 +832,203 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getDescripted_Name(), ecorePackage.getEString(), "name", null, 0, 1, Descripted.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cultivarEClass, Cultivar.class, "Cultivar", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(itemProcessEClass, ItemProcess.class, "ItemProcess", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCultivar_PlantSpecies(), this.getPlantSpecies(), null, "plantSpecies", null, 1, 1,
-				Cultivar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getItemProcess_ItemProcessType(), this.getItemSpecies(), null, "itemProcessType", null, 0, 1,
+				ItemProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCultivar_Threats(), this.getThreat(), null, "threats", null, 0, -1, Cultivar.class,
+		initEReference(getItemProcess_Problems(), this.getProblem(), null, "problems", null, 0, -1, ItemProcess.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItemProcess_Author(), this.getUser(), null, "author", null, 1, 1, ItemProcess.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUser_Email(), ecorePackage.getEString(), "email", null, 0, 1, User.class, !IS_TRANSIENT,
+		initEAttribute(getUser_Email(), ecorePackage.getEString(), "email", null, 1, 1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUser_Username(), ecorePackage.getEString(), "username", null, 0, 1, User.class, !IS_TRANSIENT,
+		initEAttribute(getUser_Username(), ecorePackage.getEString(), "username", null, 1, 1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUser_Uname(), ecorePackage.getEString(), "uname", null, 0, 1, User.class, !IS_TRANSIENT,
+		initEAttribute(getUser_Uname(), ecorePackage.getEString(), "uname", null, 1, 1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUser_Birthdate(), ecorePackage.getEDate(), "birthdate", null, 0, 1, User.class, !IS_TRANSIENT,
+		initEAttribute(getUser_Birthdate(), ecorePackage.getEDate(), "birthdate", null, 1, 1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Surname(), ecorePackage.getEString(), "surname", null, 0, 1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUser_Fields(), this.getField(), null, "fields", null, 0, -1, User.class, !IS_TRANSIENT,
+		initEAttribute(getUser_UserType(), this.getUserType(), "userType", null, 1, 1, User.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUser_Solutions(), this.getSolution(), null, "solutions", null, 0, -1, User.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUser_Problems(), this.getProblem(), null, "problems", null, 0, -1, User.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-
-		initEClass(cultivationEClass, Cultivation.class, "Cultivation", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCultivation_Plant(), this.getCultivar(), null, "plant", null, 1, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+		initEReference(getUser_ItemProcess(), this.getItemProcess(), null, "itemProcess", null, 0, -1, User.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCultivation_StartDate(), ecorePackage.getEDate(), "startDate", null, 0, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCultivation_EndDate(), ecorePackage.getEDate(), "endDate", null, 0, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCultivation_Status(), this.getcultivationStatus(), "status", null, 0, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCultivation_Field(), this.getField(), null, "field", null, 1, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCultivation_Weight(), ecorePackage.getEDouble(), "weight", null, 0, 1, Cultivation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUser_Process(), this.getProcess(), null, "process", null, 0, -1, User.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getUser_Fullname(), ecorePackage.getEString(), "fullname", null, 0, 1, User.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(plantSpeciesEClass, PlantSpecies.class, "PlantSpecies", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(processEClass, it.disim.univaq.cooltivar.cooltivar.Process.class, "Process", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcess_ItemProcess(), this.getItemProcess(), null, "itemProcess", null, 0, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_Status(), this.getProcessStatus(), "status", null, 0, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Location(), this.getLocation(), null, "location", null, 0, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_Weight(), ecorePackage.getEDouble(), "weight", null, 1, 1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_ActionHistory(), this.getAction(), null, "actionHistory", null, 0, -1,
+				it.disim.univaq.cooltivar.cooltivar.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getProcess__CheckFutureDate(), ecorePackage.getEBooleanObject(), "checkFutureDate", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEClass(itemSpeciesEClass, ItemSpecies.class, "ItemSpecies", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlantSpecies_PlantGenus(), ecorePackage.getEString(), "plantGenus", null, 0, 1,
-				PlantSpecies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAction_Remedy(), this.getRemedy(), null, "remedy", null, 0, 1, Action.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getAction_StartDate(), ecorePackage.getEDate(), "startDate", null, 0, 1, Action.class,
+		initEAttribute(getAction_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_EndDate(), ecorePackage.getEDate(), "endDate", null, 0, 1, Action.class, !IS_TRANSIENT,
+		initEAttribute(getAction_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, Action.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAction_Threat(), this.getThreat(), null, "threat", null, 0, 1, Action.class, !IS_TRANSIENT,
+		initEReference(getAction_Problem(), this.getProblem(), null, "problem", null, 0, 1, Action.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-
-		initEClass(threatEClass, Threat.class, "Threat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreat_Author(), this.getUser(), null, "author", null, 1, 1, Threat.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getThreat_Remedies(), this.getRemedy(), null, "remedies", null, 1, -1, Threat.class,
+		initEReference(getAction_Solution(), this.getSolution(), null, "solution", null, 0, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreat_Cultivars(), this.getCultivar(), null, "cultivars", null, 0, 1, Threat.class,
+		initEAttribute(getAction_ActionsType(), this.getActionType(), "actionsType", null, 1, 1, Action.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_ActionStatus(), this.getActionStatus(), "actionStatus", null, 1, 1, Action.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_FullDescription(), ecorePackage.getEString(), "fullDescription", null, 0, 1,
+				Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getAction_Process(), this.getProcess(), null, "process", null, 1, 1, Action.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(problemEClass, Problem.class, "Problem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProblem_Author(), this.getUser(), null, "author", null, 1, 1, Problem.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getProblem_Solutions(), this.getSolution(), null, "solutions", null, 0, -1, Problem.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProblem_Process(), this.getItemProcess(), null, "process", null, 0, 1, Problem.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(remedyEClass, Remedy.class, "Remedy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemedy_Author(), this.getUser(), null, "author", null, 0, 1, Remedy.class, !IS_TRANSIENT,
+		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSolution_Author(), this.getUser(), null, "author", null, 0, 1, Solution.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getRemedy_Threats(), this.getThreat(), null, "threats", null, 1, -1, Remedy.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getSolution_Problems(), this.getProblem(), null, "problems", null, 1, -1, Solution.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getLocation_Coordinates(), g1, "coordinates", null, 0, 1, Location.class, IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(cultivationStatusEEnum, cultivationStatus.class, "cultivationStatus");
-		addEEnumLiteral(cultivationStatusEEnum, cultivationStatus.DRAFT);
-		addEEnumLiteral(cultivationStatusEEnum, cultivationStatus.PROGRESS);
-		addEEnumLiteral(cultivationStatusEEnum, cultivationStatus.COMPLETE);
+		initEEnum(processStatusEEnum, ProcessStatus.class, "ProcessStatus");
+		addEEnumLiteral(processStatusEEnum, ProcessStatus.DRAFT);
+		addEEnumLiteral(processStatusEEnum, ProcessStatus.PROGRESS);
+		addEEnumLiteral(processStatusEEnum, ProcessStatus.COMPLETE);
 
-		initEEnum(actionStatusEEnum, actionStatus.class, "actionStatus");
-		addEEnumLiteral(actionStatusEEnum, actionStatus.TODO);
-		addEEnumLiteral(actionStatusEEnum, actionStatus.PROGRESS);
-		addEEnumLiteral(actionStatusEEnum, actionStatus.SUCCESS);
-		addEEnumLiteral(actionStatusEEnum, actionStatus.FAIL);
+		initEEnum(actionStatusEEnum, ActionStatus.class, "ActionStatus");
+		addEEnumLiteral(actionStatusEEnum, ActionStatus.TODO);
+		addEEnumLiteral(actionStatusEEnum, ActionStatus.PROGRESS);
+		addEEnumLiteral(actionStatusEEnum, ActionStatus.SUCCESS);
+		addEEnumLiteral(actionStatusEEnum, ActionStatus.FAIL);
 
-		initEEnum(actionTypeEEnum, actionType.class, "actionType");
-		addEEnumLiteral(actionTypeEEnum, actionType.CUSTOM);
-		addEEnumLiteral(actionTypeEEnum, actionType.THREAT);
-		addEEnumLiteral(actionTypeEEnum, actionType.REMEDY);
+		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
+		addEEnumLiteral(actionTypeEEnum, ActionType.CUSTOM);
+		addEEnumLiteral(actionTypeEEnum, ActionType.PROBLEM);
+		addEEnumLiteral(actionTypeEEnum, ActionType.SOLUTION);
+
+		initEEnum(userTypeEEnum, UserType.class, "UserType");
+		addEEnumLiteral(userTypeEEnum, UserType.ADMIN);
+		addEEnumLiteral(userTypeEEnum, UserType.BASIC);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation(this, source, new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(this, source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "validationDelegates",
+						"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" });
+		addAnnotation(processEClass, source, new String[] { "constraints", "minW checkDate" });
+		addAnnotation(actionEClass, source, new String[] { "constraints", "checkDate checkActionType" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation(getUser_Fullname(), source,
+				new String[] { "derivation", "self.uname.concat(\' \').concat(self.surname)" });
+		addAnnotation(processEClass, source,
+				new String[] { "minW", "self.weight >= 0.0", "checkDate", "self.startDate < self.endDate" });
+		addAnnotation(actionEClass, source, new String[] { "checkDate", "self.startDate < self.endDate",
+				"checkActionType",
+				"(self.solution.oclIsUndefined()) and (not self.problem.oclIsUndefined()) and (self.actionsType = ActionType::PROBLEM)\n\t\t\t\t\t\t\tor (self.problem.oclIsUndefined()) and (not self.solution.oclIsUndefined()) and (self.actionsType = ActionType::SOLUTION)\n\t\t\t\t\t\t\tor (self.actionsType = ActionType::CUSTOM)" });
+		addAnnotation(getAction_FullDescription(), source, new String[] { "derivation",
+				"self.actionStatus.toString().concat(\' \').concat(self.actionsType.toString().concat(\' \').concat(\'Descrizione...\'))" });
 	}
 
 } //ModelPackageImpl

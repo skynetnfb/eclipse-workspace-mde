@@ -3,15 +3,18 @@
 package it.disim.univaq.cooltivar.cooltivar.impl;
 
 import it.disim.univaq.cooltivar.cooltivar.Action;
+import it.disim.univaq.cooltivar.cooltivar.ActionStatus;
+import it.disim.univaq.cooltivar.cooltivar.ActionType;
 import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
-import it.disim.univaq.cooltivar.cooltivar.Remedy;
-import it.disim.univaq.cooltivar.cooltivar.Threat;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
 
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -24,25 +27,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getRemedy <em>Remedy</em>}</li>
  *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getEndDate <em>End Date</em>}</li>
- *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getThreat <em>Threat</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getProblem <em>Problem</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getSolution <em>Solution</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getActionsType <em>Actions Type</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getActionStatus <em>Action Status</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getFullDescription <em>Full Description</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.ActionImpl#getProcess <em>Process</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActionImpl extends DescriptedImpl implements Action {
-	/**
-	 * The cached value of the '{@link #getRemedy() <em>Remedy</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemedy()
-	 * @generated
-	 * @ordered
-	 */
-	protected Remedy remedy;
-
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,14 +81,85 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' reference.
+	 * The cached value of the '{@link #getProblem() <em>Problem</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThreat()
+	 * @see #getProblem()
 	 * @generated
 	 * @ordered
 	 */
-	protected Threat threat;
+	protected Problem problem;
+
+	/**
+	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected Solution solution;
+
+	/**
+	 * The default value of the '{@link #getActionsType() <em>Actions Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionsType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ActionType ACTIONS_TYPE_EDEFAULT = ActionType.CUSTOM;
+
+	/**
+	 * The cached value of the '{@link #getActionsType() <em>Actions Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionsType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActionType actionsType = ACTIONS_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getActionStatus() <em>Action Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ActionStatus ACTION_STATUS_EDEFAULT = ActionStatus.TODO;
+
+	/**
+	 * The cached value of the '{@link #getActionStatus() <em>Action Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActionStatus actionStatus = ACTION_STATUS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getFullDescription() <em>Full Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFullDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FULL_DESCRIPTION__ESETTING_DELEGATE = ((EStructuralFeature.Internal) ModelPackage.Literals.ACTION__FULL_DESCRIPTION)
+			.getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getProcess() <em>Process</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProcess()
+	 * @generated
+	 * @ordered
+	 */
+	protected it.disim.univaq.cooltivar.cooltivar.Process process;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,45 +178,6 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.ACTION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Remedy getRemedy() {
-		if (remedy != null && remedy.eIsProxy()) {
-			InternalEObject oldRemedy = (InternalEObject) remedy;
-			remedy = (Remedy) eResolveProxy(oldRemedy);
-			if (remedy != oldRemedy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ACTION__REMEDY, oldRemedy,
-							remedy));
-			}
-		}
-		return remedy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Remedy basicGetRemedy() {
-		return remedy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRemedy(Remedy newRemedy) {
-		Remedy oldRemedy = remedy;
-		remedy = newRemedy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__REMEDY, oldRemedy, remedy));
 	}
 
 	/**
@@ -199,17 +228,17 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Threat getThreat() {
-		if (threat != null && threat.eIsProxy()) {
-			InternalEObject oldThreat = (InternalEObject) threat;
-			threat = (Threat) eResolveProxy(oldThreat);
-			if (threat != oldThreat) {
+	public Problem getProblem() {
+		if (problem != null && problem.eIsProxy()) {
+			InternalEObject oldProblem = (InternalEObject) problem;
+			problem = (Problem) eResolveProxy(oldProblem);
+			if (problem != oldProblem) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ACTION__THREAT, oldThreat,
-							threat));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ACTION__PROBLEM, oldProblem,
+							problem));
 			}
 		}
-		return threat;
+		return problem;
 	}
 
 	/**
@@ -217,8 +246,8 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Threat basicGetThreat() {
-		return threat;
+	public Problem basicGetProblem() {
+		return problem;
 	}
 
 	/**
@@ -226,11 +255,152 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setThreat(Threat newThreat) {
-		Threat oldThreat = threat;
-		threat = newThreat;
+	public void setProblem(Problem newProblem) {
+		Problem oldProblem = problem;
+		problem = newProblem;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__THREAT, oldThreat, threat));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__PROBLEM, oldProblem, problem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Solution getSolution() {
+		if (solution != null && solution.eIsProxy()) {
+			InternalEObject oldSolution = (InternalEObject) solution;
+			solution = (Solution) eResolveProxy(oldSolution);
+			if (solution != oldSolution) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ACTION__SOLUTION,
+							oldSolution, solution));
+			}
+		}
+		return solution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Solution basicGetSolution() {
+		return solution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSolution(Solution newSolution) {
+		Solution oldSolution = solution;
+		solution = newSolution;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__SOLUTION, oldSolution,
+					solution));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionType getActionsType() {
+		return actionsType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActionsType(ActionType newActionsType) {
+		ActionType oldActionsType = actionsType;
+		actionsType = newActionsType == null ? ACTIONS_TYPE_EDEFAULT : newActionsType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__ACTIONS_TYPE, oldActionsType,
+					actionsType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionStatus getActionStatus() {
+		return actionStatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActionStatus(ActionStatus newActionStatus) {
+		ActionStatus oldActionStatus = actionStatus;
+		actionStatus = newActionStatus == null ? ACTION_STATUS_EDEFAULT : newActionStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__ACTION_STATUS, oldActionStatus,
+					actionStatus));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getFullDescription() {
+		return (String) FULL_DESCRIPTION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFullDescription(String newFullDescription) {
+		FULL_DESCRIPTION__ESETTING_DELEGATE.dynamicSet(this, null, 0, newFullDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public it.disim.univaq.cooltivar.cooltivar.Process getProcess() {
+		if (process != null && process.eIsProxy()) {
+			InternalEObject oldProcess = (InternalEObject) process;
+			process = (it.disim.univaq.cooltivar.cooltivar.Process) eResolveProxy(oldProcess);
+			if (process != oldProcess) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ACTION__PROCESS, oldProcess,
+							process));
+			}
+		}
+		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public it.disim.univaq.cooltivar.cooltivar.Process basicGetProcess() {
+		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProcess(it.disim.univaq.cooltivar.cooltivar.Process newProcess) {
+		it.disim.univaq.cooltivar.cooltivar.Process oldProcess = process;
+		process = newProcess;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ACTION__PROCESS, oldProcess, process));
 	}
 
 	/**
@@ -241,18 +411,28 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ModelPackage.ACTION__REMEDY:
-			if (resolve)
-				return getRemedy();
-			return basicGetRemedy();
 		case ModelPackage.ACTION__START_DATE:
 			return getStartDate();
 		case ModelPackage.ACTION__END_DATE:
 			return getEndDate();
-		case ModelPackage.ACTION__THREAT:
+		case ModelPackage.ACTION__PROBLEM:
 			if (resolve)
-				return getThreat();
-			return basicGetThreat();
+				return getProblem();
+			return basicGetProblem();
+		case ModelPackage.ACTION__SOLUTION:
+			if (resolve)
+				return getSolution();
+			return basicGetSolution();
+		case ModelPackage.ACTION__ACTIONS_TYPE:
+			return getActionsType();
+		case ModelPackage.ACTION__ACTION_STATUS:
+			return getActionStatus();
+		case ModelPackage.ACTION__FULL_DESCRIPTION:
+			return getFullDescription();
+		case ModelPackage.ACTION__PROCESS:
+			if (resolve)
+				return getProcess();
+			return basicGetProcess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,17 +445,29 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ModelPackage.ACTION__REMEDY:
-			setRemedy((Remedy) newValue);
-			return;
 		case ModelPackage.ACTION__START_DATE:
 			setStartDate((Date) newValue);
 			return;
 		case ModelPackage.ACTION__END_DATE:
 			setEndDate((Date) newValue);
 			return;
-		case ModelPackage.ACTION__THREAT:
-			setThreat((Threat) newValue);
+		case ModelPackage.ACTION__PROBLEM:
+			setProblem((Problem) newValue);
+			return;
+		case ModelPackage.ACTION__SOLUTION:
+			setSolution((Solution) newValue);
+			return;
+		case ModelPackage.ACTION__ACTIONS_TYPE:
+			setActionsType((ActionType) newValue);
+			return;
+		case ModelPackage.ACTION__ACTION_STATUS:
+			setActionStatus((ActionStatus) newValue);
+			return;
+		case ModelPackage.ACTION__FULL_DESCRIPTION:
+			setFullDescription((String) newValue);
+			return;
+		case ModelPackage.ACTION__PROCESS:
+			setProcess((it.disim.univaq.cooltivar.cooltivar.Process) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,17 +481,29 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ModelPackage.ACTION__REMEDY:
-			setRemedy((Remedy) null);
-			return;
 		case ModelPackage.ACTION__START_DATE:
 			setStartDate(START_DATE_EDEFAULT);
 			return;
 		case ModelPackage.ACTION__END_DATE:
 			setEndDate(END_DATE_EDEFAULT);
 			return;
-		case ModelPackage.ACTION__THREAT:
-			setThreat((Threat) null);
+		case ModelPackage.ACTION__PROBLEM:
+			setProblem((Problem) null);
+			return;
+		case ModelPackage.ACTION__SOLUTION:
+			setSolution((Solution) null);
+			return;
+		case ModelPackage.ACTION__ACTIONS_TYPE:
+			setActionsType(ACTIONS_TYPE_EDEFAULT);
+			return;
+		case ModelPackage.ACTION__ACTION_STATUS:
+			setActionStatus(ACTION_STATUS_EDEFAULT);
+			return;
+		case ModelPackage.ACTION__FULL_DESCRIPTION:
+			FULL_DESCRIPTION__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+			return;
+		case ModelPackage.ACTION__PROCESS:
+			setProcess((it.disim.univaq.cooltivar.cooltivar.Process) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -313,14 +517,22 @@ public class ActionImpl extends DescriptedImpl implements Action {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ModelPackage.ACTION__REMEDY:
-			return remedy != null;
 		case ModelPackage.ACTION__START_DATE:
 			return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 		case ModelPackage.ACTION__END_DATE:
 			return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-		case ModelPackage.ACTION__THREAT:
-			return threat != null;
+		case ModelPackage.ACTION__PROBLEM:
+			return problem != null;
+		case ModelPackage.ACTION__SOLUTION:
+			return solution != null;
+		case ModelPackage.ACTION__ACTIONS_TYPE:
+			return actionsType != ACTIONS_TYPE_EDEFAULT;
+		case ModelPackage.ACTION__ACTION_STATUS:
+			return actionStatus != ACTION_STATUS_EDEFAULT;
+		case ModelPackage.ACTION__FULL_DESCRIPTION:
+			return FULL_DESCRIPTION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+		case ModelPackage.ACTION__PROCESS:
+			return process != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -340,6 +552,10 @@ public class ActionImpl extends DescriptedImpl implements Action {
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
+		result.append(", actionsType: ");
+		result.append(actionsType);
+		result.append(", actionStatus: ");
+		result.append(actionStatus);
 		result.append(')');
 		return result.toString();
 	}

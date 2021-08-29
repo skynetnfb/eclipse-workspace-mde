@@ -2,7 +2,21 @@
  */
 package it.disim.univaq.cooltivar.cooltivar.impl;
 
-import it.disim.univaq.cooltivar.cooltivar.*;
+import it.disim.univaq.cooltivar.cooltivar.Action;
+import it.disim.univaq.cooltivar.cooltivar.ActionStatus;
+import it.disim.univaq.cooltivar.cooltivar.ActionType;
+import it.disim.univaq.cooltivar.cooltivar.Application;
+import it.disim.univaq.cooltivar.cooltivar.Descripted;
+import it.disim.univaq.cooltivar.cooltivar.ItemProcess;
+import it.disim.univaq.cooltivar.cooltivar.ItemSpecies;
+import it.disim.univaq.cooltivar.cooltivar.Location;
+import it.disim.univaq.cooltivar.cooltivar.ModelFactory;
+import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.ProcessStatus;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
+import it.disim.univaq.cooltivar.cooltivar.User;
+import it.disim.univaq.cooltivar.cooltivar.UserType;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -60,22 +74,22 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			return createApplication();
 		case ModelPackage.DESCRIPTED:
 			return createDescripted();
-		case ModelPackage.CULTIVAR:
-			return createCultivar();
+		case ModelPackage.ITEM_PROCESS:
+			return createItemProcess();
 		case ModelPackage.USER:
 			return createUser();
-		case ModelPackage.CULTIVATION:
-			return createCultivation();
-		case ModelPackage.PLANT_SPECIES:
-			return createPlantSpecies();
+		case ModelPackage.PROCESS:
+			return createProcess();
+		case ModelPackage.ITEM_SPECIES:
+			return createItemSpecies();
 		case ModelPackage.ACTION:
 			return createAction();
-		case ModelPackage.THREAT:
-			return createThreat();
-		case ModelPackage.REMEDY:
-			return createRemedy();
-		case ModelPackage.FIELD:
-			return createField();
+		case ModelPackage.PROBLEM:
+			return createProblem();
+		case ModelPackage.SOLUTION:
+			return createSolution();
+		case ModelPackage.LOCATION:
+			return createLocation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,12 +103,14 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case ModelPackage.CULTIVATION_STATUS:
-			return createcultivationStatusFromString(eDataType, initialValue);
+		case ModelPackage.PROCESS_STATUS:
+			return createProcessStatusFromString(eDataType, initialValue);
 		case ModelPackage.ACTION_STATUS:
-			return createactionStatusFromString(eDataType, initialValue);
+			return createActionStatusFromString(eDataType, initialValue);
 		case ModelPackage.ACTION_TYPE:
-			return createactionTypeFromString(eDataType, initialValue);
+			return createActionTypeFromString(eDataType, initialValue);
+		case ModelPackage.USER_TYPE:
+			return createUserTypeFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,12 +124,14 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case ModelPackage.CULTIVATION_STATUS:
-			return convertcultivationStatusToString(eDataType, instanceValue);
+		case ModelPackage.PROCESS_STATUS:
+			return convertProcessStatusToString(eDataType, instanceValue);
 		case ModelPackage.ACTION_STATUS:
-			return convertactionStatusToString(eDataType, instanceValue);
+			return convertActionStatusToString(eDataType, instanceValue);
 		case ModelPackage.ACTION_TYPE:
-			return convertactionTypeToString(eDataType, instanceValue);
+			return convertActionTypeToString(eDataType, instanceValue);
+		case ModelPackage.USER_TYPE:
+			return convertUserTypeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -144,9 +162,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cultivar createCultivar() {
-		CultivarImpl cultivar = new CultivarImpl();
-		return cultivar;
+	public ItemProcess createItemProcess() {
+		ItemProcessImpl itemProcess = new ItemProcessImpl();
+		return itemProcess;
 	}
 
 	/**
@@ -164,9 +182,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cultivation createCultivation() {
-		CultivationImpl cultivation = new CultivationImpl();
-		return cultivation;
+	public it.disim.univaq.cooltivar.cooltivar.Process createProcess() {
+		ProcessImpl process = new ProcessImpl();
+		return process;
 	}
 
 	/**
@@ -174,9 +192,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlantSpecies createPlantSpecies() {
-		PlantSpeciesImpl plantSpecies = new PlantSpeciesImpl();
-		return plantSpecies;
+	public ItemSpecies createItemSpecies() {
+		ItemSpeciesImpl itemSpecies = new ItemSpeciesImpl();
+		return itemSpecies;
 	}
 
 	/**
@@ -194,9 +212,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Threat createThreat() {
-		ThreatImpl threat = new ThreatImpl();
-		return threat;
+	public Problem createProblem() {
+		ProblemImpl problem = new ProblemImpl();
+		return problem;
 	}
 
 	/**
@@ -204,9 +222,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Remedy createRemedy() {
-		RemedyImpl remedy = new RemedyImpl();
-		return remedy;
+	public Solution createSolution() {
+		SolutionImpl solution = new SolutionImpl();
+		return solution;
 	}
 
 	/**
@@ -214,9 +232,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Field createField() {
-		FieldImpl field = new FieldImpl();
-		return field;
+	public Location createLocation() {
+		LocationImpl location = new LocationImpl();
+		return location;
 	}
 
 	/**
@@ -224,8 +242,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public cultivationStatus createcultivationStatusFromString(EDataType eDataType, String initialValue) {
-		cultivationStatus result = cultivationStatus.get(initialValue);
+	public ProcessStatus createProcessStatusFromString(EDataType eDataType, String initialValue) {
+		ProcessStatus result = ProcessStatus.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -237,7 +255,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertcultivationStatusToString(EDataType eDataType, Object instanceValue) {
+	public String convertProcessStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -246,8 +264,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public actionStatus createactionStatusFromString(EDataType eDataType, String initialValue) {
-		actionStatus result = actionStatus.get(initialValue);
+	public ActionStatus createActionStatusFromString(EDataType eDataType, String initialValue) {
+		ActionStatus result = ActionStatus.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -259,7 +277,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertactionStatusToString(EDataType eDataType, Object instanceValue) {
+	public String convertActionStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -268,8 +286,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public actionType createactionTypeFromString(EDataType eDataType, String initialValue) {
-		actionType result = actionType.get(initialValue);
+	public ActionType createActionTypeFromString(EDataType eDataType, String initialValue) {
+		ActionType result = ActionType.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -281,7 +299,29 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertactionTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertActionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserType createUserTypeFromString(EDataType eDataType, String initialValue) {
+		UserType result = UserType.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUserTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

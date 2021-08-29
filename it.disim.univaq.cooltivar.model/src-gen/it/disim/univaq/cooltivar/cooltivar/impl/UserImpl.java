@@ -2,9 +2,12 @@
  */
 package it.disim.univaq.cooltivar.cooltivar.impl;
 
-import it.disim.univaq.cooltivar.cooltivar.Field;
+import it.disim.univaq.cooltivar.cooltivar.ItemProcess;
 import it.disim.univaq.cooltivar.cooltivar.ModelPackage;
+import it.disim.univaq.cooltivar.cooltivar.Problem;
+import it.disim.univaq.cooltivar.cooltivar.Solution;
 import it.disim.univaq.cooltivar.cooltivar.User;
+import it.disim.univaq.cooltivar.cooltivar.UserType;
 
 import java.util.Collection;
 import java.util.Date;
@@ -15,10 +18,10 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,12 +39,17 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getUname <em>Uname</em>}</li>
  *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getBirthdate <em>Birthdate</em>}</li>
  *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getSurname <em>Surname</em>}</li>
- *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getUserType <em>User Type</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getSolutions <em>Solutions</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getProblems <em>Problems</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getItemProcess <em>Item Process</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getProcess <em>Process</em>}</li>
+ *   <li>{@link it.disim.univaq.cooltivar.cooltivar.impl.UserImpl#getFullname <em>Fullname</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UserImpl extends MinimalEObjectImpl.Container implements User {
+public class UserImpl extends DescriptedImpl implements User {
 	/**
 	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -143,14 +151,75 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 	protected String surname = SURNAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * The default value of the '{@link #getUserType() <em>User Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFields()
+	 * @see #getUserType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Field> fields;
+	protected static final UserType USER_TYPE_EDEFAULT = UserType.ADMIN;
+
+	/**
+	 * The cached value of the '{@link #getUserType() <em>User Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserType()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserType userType = USER_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSolutions() <em>Solutions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSolutions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Solution> solutions;
+
+	/**
+	 * The cached value of the '{@link #getProblems() <em>Problems</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProblems()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Problem> problems;
+
+	/**
+	 * The cached value of the '{@link #getItemProcess() <em>Item Process</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItemProcess()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ItemProcess> itemProcess;
+
+	/**
+	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProcess()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<it.disim.univaq.cooltivar.cooltivar.Process> process;
+
+	/**
+	 * The cached setting delegate for the '{@link #getFullname() <em>Fullname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFullname()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FULLNAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal) ModelPackage.Literals.USER__FULLNAME)
+			.getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,11 +351,88 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Field> getFields() {
-		if (fields == null) {
-			fields = new EObjectContainmentEList<Field>(Field.class, this, ModelPackage.USER__FIELDS);
+	public UserType getUserType() {
+		return userType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUserType(UserType newUserType) {
+		UserType oldUserType = userType;
+		userType = newUserType == null ? USER_TYPE_EDEFAULT : newUserType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.USER__USER_TYPE, oldUserType, userType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Solution> getSolutions() {
+		if (solutions == null) {
+			solutions = new EObjectContainmentEList<Solution>(Solution.class, this, ModelPackage.USER__SOLUTIONS);
 		}
-		return fields;
+		return solutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Problem> getProblems() {
+		if (problems == null) {
+			problems = new EObjectContainmentEList<Problem>(Problem.class, this, ModelPackage.USER__PROBLEMS);
+		}
+		return problems;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ItemProcess> getItemProcess() {
+		if (itemProcess == null) {
+			itemProcess = new EObjectContainmentEList<ItemProcess>(ItemProcess.class, this,
+					ModelPackage.USER__ITEM_PROCESS);
+		}
+		return itemProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<it.disim.univaq.cooltivar.cooltivar.Process> getProcess() {
+		if (process == null) {
+			process = new EObjectContainmentEList<it.disim.univaq.cooltivar.cooltivar.Process>(
+					it.disim.univaq.cooltivar.cooltivar.Process.class, this, ModelPackage.USER__PROCESS);
+		}
+		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getFullname() {
+		return (String) FULLNAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFullname(String newFullname) {
+		FULLNAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newFullname);
 	}
 
 	/**
@@ -297,8 +443,14 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ModelPackage.USER__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+		case ModelPackage.USER__SOLUTIONS:
+			return ((InternalEList<?>) getSolutions()).basicRemove(otherEnd, msgs);
+		case ModelPackage.USER__PROBLEMS:
+			return ((InternalEList<?>) getProblems()).basicRemove(otherEnd, msgs);
+		case ModelPackage.USER__ITEM_PROCESS:
+			return ((InternalEList<?>) getItemProcess()).basicRemove(otherEnd, msgs);
+		case ModelPackage.USER__PROCESS:
+			return ((InternalEList<?>) getProcess()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -321,8 +473,18 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 			return getBirthdate();
 		case ModelPackage.USER__SURNAME:
 			return getSurname();
-		case ModelPackage.USER__FIELDS:
-			return getFields();
+		case ModelPackage.USER__USER_TYPE:
+			return getUserType();
+		case ModelPackage.USER__SOLUTIONS:
+			return getSolutions();
+		case ModelPackage.USER__PROBLEMS:
+			return getProblems();
+		case ModelPackage.USER__ITEM_PROCESS:
+			return getItemProcess();
+		case ModelPackage.USER__PROCESS:
+			return getProcess();
+		case ModelPackage.USER__FULLNAME:
+			return getFullname();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -351,9 +513,27 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 		case ModelPackage.USER__SURNAME:
 			setSurname((String) newValue);
 			return;
-		case ModelPackage.USER__FIELDS:
-			getFields().clear();
-			getFields().addAll((Collection<? extends Field>) newValue);
+		case ModelPackage.USER__USER_TYPE:
+			setUserType((UserType) newValue);
+			return;
+		case ModelPackage.USER__SOLUTIONS:
+			getSolutions().clear();
+			getSolutions().addAll((Collection<? extends Solution>) newValue);
+			return;
+		case ModelPackage.USER__PROBLEMS:
+			getProblems().clear();
+			getProblems().addAll((Collection<? extends Problem>) newValue);
+			return;
+		case ModelPackage.USER__ITEM_PROCESS:
+			getItemProcess().clear();
+			getItemProcess().addAll((Collection<? extends ItemProcess>) newValue);
+			return;
+		case ModelPackage.USER__PROCESS:
+			getProcess().clear();
+			getProcess().addAll((Collection<? extends it.disim.univaq.cooltivar.cooltivar.Process>) newValue);
+			return;
+		case ModelPackage.USER__FULLNAME:
+			setFullname((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,8 +562,23 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 		case ModelPackage.USER__SURNAME:
 			setSurname(SURNAME_EDEFAULT);
 			return;
-		case ModelPackage.USER__FIELDS:
-			getFields().clear();
+		case ModelPackage.USER__USER_TYPE:
+			setUserType(USER_TYPE_EDEFAULT);
+			return;
+		case ModelPackage.USER__SOLUTIONS:
+			getSolutions().clear();
+			return;
+		case ModelPackage.USER__PROBLEMS:
+			getProblems().clear();
+			return;
+		case ModelPackage.USER__ITEM_PROCESS:
+			getItemProcess().clear();
+			return;
+		case ModelPackage.USER__PROCESS:
+			getProcess().clear();
+			return;
+		case ModelPackage.USER__FULLNAME:
+			FULLNAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 			return;
 		}
 		super.eUnset(featureID);
@@ -407,8 +602,18 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 			return BIRTHDATE_EDEFAULT == null ? birthdate != null : !BIRTHDATE_EDEFAULT.equals(birthdate);
 		case ModelPackage.USER__SURNAME:
 			return SURNAME_EDEFAULT == null ? surname != null : !SURNAME_EDEFAULT.equals(surname);
-		case ModelPackage.USER__FIELDS:
-			return fields != null && !fields.isEmpty();
+		case ModelPackage.USER__USER_TYPE:
+			return userType != USER_TYPE_EDEFAULT;
+		case ModelPackage.USER__SOLUTIONS:
+			return solutions != null && !solutions.isEmpty();
+		case ModelPackage.USER__PROBLEMS:
+			return problems != null && !problems.isEmpty();
+		case ModelPackage.USER__ITEM_PROCESS:
+			return itemProcess != null && !itemProcess.isEmpty();
+		case ModelPackage.USER__PROCESS:
+			return process != null && !process.isEmpty();
+		case ModelPackage.USER__FULLNAME:
+			return FULLNAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -434,6 +639,8 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 		result.append(birthdate);
 		result.append(", surname: ");
 		result.append(surname);
+		result.append(", userType: ");
+		result.append(userType);
 		result.append(')');
 		return result.toString();
 	}
