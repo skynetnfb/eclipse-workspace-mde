@@ -60,6 +60,7 @@
       <details key="minW" value="self.weight >= 0.0"/>
       <details key="checkDate" value="self.startDate &lt; self.endDate"/>
     </eAnnotations>
+    <eOperations name="checkFutureDate" eType="ecore:EDataType &_0;#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" eType="#//ItemProcess"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
         eType="ecore:EDataType &_0;#//EDate"/>
