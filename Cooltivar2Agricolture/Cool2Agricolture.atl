@@ -17,7 +17,9 @@ rule CoolUser2AgriUser {
 			birthdate <- s.birthdate,
 			userType <- s.userType,
 			solutions <- s.solutions,
-			problems <- s.problems
+			problems <- s.problems,
+			itemProcess <- s.itemProcess,
+			process <- s.process
 		)
 }
 
@@ -42,5 +44,49 @@ rule CoolSolution2AgriSolution{
 			description <- s.description,
 			author<- s.author,
 			problems <- s.problems
+		)
+}
+
+rule CoolItemProcess2AgriItemProcess {
+	from
+		s: Cool!ItemProcess
+	to
+		t: Agri!ItemProcess (
+			name <- s.name,
+			description <- s.description,
+			problems <- s.problems,
+			author <- s.author
+		)
+}
+
+rule CoolProcess2AgriProcess {
+	from
+		s: Cool!Process
+	to
+		t: Agri!Process (
+			name <- s.name,
+			description <- s.description,
+			startDate <- s.startDate,
+			endDate <- s.endDate,
+			status <- s.status,
+			weight <- s.weight,
+			actionHistory <- s.actionHistory
+			--location <- s.location.name
+		)
+}
+
+rule CoolAction2AgriAction {
+	from
+		s: Cool!Action
+	to
+		t: Agri!Action (
+			name <- s.name,
+			description <- s.description,
+			startDate <- s.startDate,
+			endDate <- s.endDate,
+			problem <- s.problem,
+			solution <- s.solution,
+			actionsType <- s.actionsType,
+			actionStatus <- s.actionStatus
 		)
 }
