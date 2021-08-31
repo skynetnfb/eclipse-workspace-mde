@@ -1,0 +1,22 @@
+
+<h1>Process</h1>
+
+<table style=" border: 1px solid gray; padding = 5px;">
+  <tr style=" border: 1px solid gray; padding = 5px;">
+    <th style=" border: 1px solid gray; padding = 5px;">item process</th>
+    <th style=" border: 1px solid gray; padding = 5px;">start date</th>
+    <th style=" border: 1px solid gray; padding = 5px;">end date</th>
+    <th style=" border: 1px solid gray; padding = 5px;">location</th>
+    <th style=" border: 1px solid gray; padding = 5px;">weight</th>
+    <th style=" border: 1px solid gray; padding = 5px;">action history</th>
+  </tr>
+  <tr>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=process.itemProcess%]</td>
+     <td style=" border: 1px solid gray; padding = 5px;">[%=process.startDate.getDay()%] / [%=process.startDate.getMonth()%] / [%=process.startDate.getYear()%]</td>
+     <td style=" border: 1px solid gray; padding = 5px;">[%=process.endDate.getDay()%] / [%=process.endDate.getMonth()%] / [%=process.endDate.getYear()%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=process.location%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=process.weight%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=process.actionHistory%]</td>
+  </tr>
+
+</table>

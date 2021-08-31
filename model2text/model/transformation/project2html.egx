@@ -1,0 +1,62 @@
+rule user2html
+	transform app : APP {
+	
+	template : "user2html.egl"
+	
+	target : "user.html"
+	
+	}
+	
+rule process2html
+	transform app : APP {
+	
+	template : "process2html.egl"
+	
+	target : "process.html"
+	
+	}
+	
+rule itemSpecies2html
+	transform app : APP {
+	
+	template : "itemSpecies2html.egl"
+	
+	target : "itemSpecies.html"
+	
+	}
+	
+rule action2html
+	transform app : APP {
+	
+	template : "action2html.egl"
+	
+	target : "action.html"
+	
+	}
+	
+rule problem2html
+	transform app : APP {
+	
+	template : "problem2html.egl"
+	
+	target : "problem.html"
+	
+	}
+	
+rule solution2html
+	transform app : APP {
+	
+	template : "solution2html.egl"
+	
+	target : "solution.html"
+	
+	}
+	
+rule location2html
+	transform app : APP {
+	
+	template : "location2html.egl"
+	
+	target : "location.html"
+	
+	}

@@ -1,0 +1,21 @@
+<h1>Action</h1>
+
+<table>
+  <tr>
+    <th>actionType</th>
+    <th>start date</th>
+    <th>end date</th>
+    <th>linked Problem</th>
+    <th>linked Solution</th>
+    <th>status</th>
+    <th>linked Process</th>
+  </tr>
+  <tr>
+     <td>[%=action.startDate.getDay()%] / [%=action.startDate.getMonth()%] / [%=action.startDate.getYear()%]</td>
+     <td>[%=action.endDate.getDay()%] / [%=action.endDate.getMonth()%] / [%=action.endDate.getYear()%]</td>
+    <td>[%=action.problem.name%]</td>
+    <td>[%=action.solution.name%]</td>
+    <td>[%=action.status%]</td>
+    <td>[%=action.process.name%]</td>
+  </tr>
+</table>

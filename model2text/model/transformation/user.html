@@ -1,0 +1,18 @@
+<h1>User</h1>
+
+<table>
+  <tr>
+    <th>username</th>
+    <th>name</th>
+    <th>surname</th>
+    <th>birthdate</th>
+    <th>userType</th>
+  </tr>
+  <tr>
+    <td>[%=user.username%]</td>
+    <td>[%=user.name%]</td>
+    <td>[%=user.surname%]</td>
+    <td>[%=user.birthdate.getDay()%] / [%=user.birthdate.getMonth()%] / [%=user.birthdate.getYear()%]</td>
+    <td>[%=user.userType%]</td>
+  </tr>
+</table>
