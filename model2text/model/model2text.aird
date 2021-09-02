@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
-  <viewpoint:DAnalysis uid="_XvpfQAm1Eey-k5L5kD4LGA" selectedViews="_XxzbYAm1Eey-k5L5kD4LGA" version="14.3.1.202003261200">
+  <viewpoint:DAnalysis uid="_XvpfQAm1Eey-k5L5kD4LGA" selectedViews="_XxzbYAm1Eey-k5L5kD4LGA" version="14.5.0.202104161500">
     <semanticResources>model2text.ecore</semanticResources>
     <semanticResources>model2text.genmodel</semanticResources>
+    <semanticResources>Application.xmi</semanticResources>
+    <semanticResources>model.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_XxzbYAm1Eey-k5L5kD4LGA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Xy7cwAm1Eey-k5L5kD4LGA" name="model2text" repPath="#_XyUYwAm1Eey-k5L5kD4LGA" changeId="0739e654-62c2-4fc9-8b56-f8ea99d831c3">

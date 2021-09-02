@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<head>
-<title>User<title>
-</head>
-
-<doby>
 <h1>User</h1>
 
-<table>
+<table border=1>
   <tr>
     <th>username</th>
     <th>name</th>
@@ -22,5 +16,3 @@
     <td>[%=user.userType%]</td>
   </tr>
 </table>
-
-</doby>
