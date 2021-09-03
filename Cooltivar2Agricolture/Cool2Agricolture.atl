@@ -6,6 +6,8 @@ module Cool2Agricolture;
 
 create OUT: Agri from IN: Cool;
 
+
+
 rule CoolUser2AgriUser {
 	from
 		s: Cool!User
@@ -55,7 +57,8 @@ rule CoolItemProcess2AgriItemProcess {
 			name <- s.name,
 			description <- s.description,
 			problems <- s.problems,
-			author <- s.author
+			author <- s.author,
+			itemType <- s.itemProcessType.name
 		)
 }
 
@@ -70,8 +73,9 @@ rule CoolProcess2AgriProcess {
 			endDate <- s.endDate,
 			status <- s.status,
 			weight <- s.weight,
-			actionHistory <- s.actionHistory
-			--location <- s.location.name
+			actionHistory <- s.actionHistory,
+			location<-s.location.name,
+			itemProcess <- s.itemProcess
 		)
 }
 

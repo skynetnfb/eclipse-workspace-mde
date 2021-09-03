@@ -22,6 +22,7 @@
         eType="#//Problem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemSpecies" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Descripted">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

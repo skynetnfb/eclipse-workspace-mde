@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cooltivar:Application
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cooltivar="http://it.disim.univaq.CoolSource.model"
+    xsi:schemaLocation="http://it.disim.univaq.CoolSource.model Cool.ecore">
+  <user description="descrizione utente"
+      name="giulio"
+      email="a@a.it"
+      username="giuuu"
+      uname="giulio"
+      birthdate="0006-06-23T00:00:00.000+0100"
+      surname="rossi"/>
+</cooltivar:Application>
