@@ -1,4 +1,4 @@
-<h1>Action</h1>
+<h1><a href="./index.html">Index</a> - Action</h1>
 
 <table border=1>
   <tr>
@@ -10,6 +10,7 @@
     <th>Status</th>
     <th>Linked Process</th>
   </tr>
+  [% for (action in Action){%]
   <tr>
   	<td> - [%=action.actionsType%] - </td>
      <td>[%=action.startDate.getDay()%] / [%=action.startDate.getMonth()%] / [%=action.startDate.getYear()%]</td>
@@ -19,4 +20,5 @@
     <td> - [%=action.actionStatus%] - </td>
     <td> - [%=action.process%] - </td>
   </tr>
+  [%}%]
 </table>

@@ -27,3 +27,52 @@ rule action2html
 	
 	}
 	
+rule itemProcess2html
+	transform itemProcess : ItemProcess {
+	
+	template : "item-process2html.egl"
+	
+	target : "gen/item-process.html"
+	
+	}
+	
+rule itemSpecies2html
+	transform itemSpecies : ItemSpecies {
+	
+	template : "item-species2html.egl"
+	
+	target : "gen/item-species.html"
+	
+	}
+	
+rule solution2html
+	transform solution : Solution {
+	
+	template : "solution2html.egl"
+	
+	target : "gen/solution.html"
+	
+	}
+	
+rule problem2html
+	transform problem : Problem {
+	
+	template : "problem2html.egl"
+	
+	target : "gen/problem.html"
+	
+	}
+	
+	
+rule location2html
+	transform location : Location {
+	
+	template : "location2html.egl"
+	
+	target : "gen/location.html"
+	
+	}
+	
+	
+	
+	

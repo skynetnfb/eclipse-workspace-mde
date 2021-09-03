@@ -1,0 +1,16 @@
+<h1><a href="./index.html">Index</a> - Location</h1>
+
+<table style=" border: 1px solid gray; padding = 5px;">
+  <tr style=" border: 1px solid gray;">
+    <th style=" border: 1px solid gray; padding = 5px;">name</th>
+    <th style=" border: 1px solid gray; padding = 5px;">description</th>
+    <th style=" border: 1px solid gray; padding = 5px;">coordinates</th>
+  </tr>
+  [% for (location in Location){%]
+  <tr>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=location.name%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=location.description%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">[%=location.coordinates%]</td>
+  </tr>
+  [%}%]
+</table>
