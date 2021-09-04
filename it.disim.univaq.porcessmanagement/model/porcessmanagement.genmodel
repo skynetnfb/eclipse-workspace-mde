@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/it.disim.univaq.porcessmanagement/src-gen" creationIcons="false"
+    editDirectory="/it.disim.univaq.porcessmanagement.edit/src-gen" editorDirectory="/it.disim.univaq.porcessmanagement.editor/src-gen"
+    modelPluginID="it.disim.univaq.porcessmanagement" modelName="Porcessmanagement"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>porcessmanagement.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Porcessmanagement" basePackage="it.disim.univaq" disposableProviderFactory="true"
+      ecorePackage="porcessmanagement.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="porcessmanagement.ecore#//ProcessStatus">
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ProcessStatus/DRAFT"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ProcessStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ProcessStatus/COMPLETE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="porcessmanagement.ecore#//ActionStatus">
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionStatus/TODO"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionStatus/PROGRESS"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionStatus/SUCCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionStatus/FAIL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="porcessmanagement.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionType/CUSTOM"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionType/PROBLEM"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//ActionType/SOLUTION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="porcessmanagement.ecore#//UserType">
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//UserType/ADMIN"/>
+      <genEnumLiterals ecoreEnumLiteral="porcessmanagement.ecore#//UserType/BASIC"/>
+    </genEnums>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Application">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Application/user"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Descripted">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Descripted/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Descripted/name"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//ItemProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//ItemProcess/itemProcessType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//ItemProcess/problems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//ItemProcess/author"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//User/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//User/surname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//User/userType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//User/solutions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//User/problems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//User/itemProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//User/process"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//User/birthdate"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Process">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Process/itemProcess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Process/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Process/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Process/actionHistory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Process/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Process/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Process/weight"/>
+      <genOperations ecoreOperation="porcessmanagement.ecore#//Process/checkFutureDate"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//ItemSpecies"/>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Action">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Action/problem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Action/solution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Action/actionsType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Action/actionStatus"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Action/process"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Action/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Action/endDate"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Problem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Problem/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Problem/solutions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Problem/process"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Solution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Solution/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference porcessmanagement.ecore#//Solution/problems"/>
+    </genClasses>
+    <genClasses ecoreClass="porcessmanagement.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute porcessmanagement.ecore#//Location/coordinates"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
