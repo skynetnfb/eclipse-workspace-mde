@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: it.disim.univaq.xtextC
+Bundle-ManifestVersion: 2
+Bundle-Name: it.disim.univaq.xtextC
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: it.disim.univaq.xtextC; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: it.disim.univaq.cooltivar.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: it.disim.univaq.xtext.validation,
+ it.disim.univaq.xtext,
+ it.disim.univaq.xtext.generator,
+ it.disim.univaq.xtext.formatting2,
+ it.disim.univaq.xtext.services,
+ it.disim.univaq.xtext.parser.antlr,
+ it.disim.univaq.xtext.scoping,
+ it.disim.univaq.xtext.serializer,
+ it.disim.univaq.xtext.parser.antlr.internal
+Import-Package: org.apache.log4j
