@@ -10,7 +10,7 @@
       <!-- @generated model -->
       <package
             uri="http://it.disim.univaq.cooltivar.model"
-            class="it.disim.univaq.cooltivar.cooltivar.ModelPackage"
+            class="cooltivar.CooltivarPackage"
             genModel="model/model.genmodel"/>
    </extension>
 

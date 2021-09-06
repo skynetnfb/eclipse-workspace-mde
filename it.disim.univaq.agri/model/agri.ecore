@@ -12,16 +12,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="Agri">
     <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" upperBound="-1"
         eType="#//User" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problem" upperBound="-1"
+        eType="#//Problem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
+        eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" upperBound="-1"
+        eType="#//Plant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
+        eType="#//Cultivation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Descripted">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemProcess" eSuperTypes="#//Descripted">
+  <eClassifiers xsi:type="ecore:EClass" name="Plant" eSuperTypes="#//Descripted">
     <eStructuralFeatures xsi:type="ecore:EReference" name="problems" upperBound="-1"
         eType="#//Problem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plantSpecies" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Descripted">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -38,11 +49,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="problems" upperBound="-1"
         eType="#//Problem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" upperBound="-1"
-        eType="#//ItemProcess" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
-        eType="#//Process" containment="true"/>
+        eType="#//Plant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cultivations" upperBound="-1"
+        eType="#//Cultivation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Descripted">
+  <eClassifiers xsi:type="ecore:EClass" name="Cultivation" eSuperTypes="#//Descripted">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="minW checkDate"/>
     </eAnnotations>
@@ -51,7 +62,7 @@
       <details key="checkDate" value="self.startDate &lt; self.endDate"/>
     </eAnnotations>
     <eOperations name="checkFutureDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" eType="#//ItemProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plant" eType="#//Plant"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
@@ -88,14 +99,14 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="process" lowerBound="1"
-        eType="#//Process"/>
+        eType="#//Cultivation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Problem" eSuperTypes="#//Descripted">
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//User"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
         eType="#//Solution"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//ItemProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Plant"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="#//Descripted">
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//User"/>

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_9U6R0AROEeytWpg0DQZc1g" selectedViews="_9WmT4AROEeytWpg0DQZc1g" version="14.3.1.202003261200">
+  <viewpoint:DAnalysis uid="_9U6R0AROEeytWpg0DQZc1g" selectedViews="_9WmT4AROEeytWpg0DQZc1g _WGeHEA78EeyRNK1fj5gEdQ" version="14.3.1.202003261200">
     <semanticResources>model.ecore</semanticResources>
-    <semanticResources>model.genmodel</semanticResources>
     <semanticResources>Application.xmi</semanticResources>
+    <semanticResources>model.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_9WmT4AROEeytWpg0DQZc1g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_9W7rEAROEeytWpg0DQZc1g" name="model" repPath="#_9W4nwAROEeytWpg0DQZc1g" changeId="1456abf6-3380-4667-99d1-0f16659fccfa">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="model.ecore#/"/>
       </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_WGeHEA78EeyRNK1fj5gEdQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/it.disim.univaq.sirius.design/description/sirius.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_9W4nwAROEeytWpg0DQZc1g">

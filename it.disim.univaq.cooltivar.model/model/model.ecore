@@ -18,7 +18,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItemProcess" eSuperTypes="#//Descripted">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcessType" eType="#//ItemSpecies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcessType" eType="#//ItemSpecies"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="problems" upperBound="-1"
         eType="#//Problem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
@@ -64,7 +65,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ProcessStatus"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionHistory" upperBound="-1"
@@ -111,11 +113,8 @@
         upperBound="-1" eType="#//Problem"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//Descripted">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordinates" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordinates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProcessStatus">
     <eLiterals name="DRAFT"/>

@@ -21,7 +21,7 @@ rule CoolUser2AgriUser {
 			solutions <- s.solutions,
 			problems <- s.problems,
 			itemProcess <- s.itemProcess,
-			process <- s.process
+			cultivations <- s.process
 		)
 }
 
@@ -49,24 +49,24 @@ rule CoolSolution2AgriSolution{
 		)
 }
 
-rule CoolItemProcess2AgriItemProcess {
+rule CoolItemProcess2AgriPlant {
 	from
 		s: Cool!ItemProcess
 	to
-		t: Agri!ItemProcess (
+		t: Agri!Plant (
 			name <- s.name,
 			description <- s.description,
 			problems <- s.problems,
 			author <- s.author,
-			itemType <- s.itemProcessType.name
+			plantSpecies <- s.itemProcessType.name
 		)
 }
 
-rule CoolProcess2AgriProcess {
+rule CoolProcess2AgriCultivation {
 	from
 		s: Cool!Process
 	to
-		t: Agri!Process (
+		t: Agri!Cultivation (
 			name <- s.name,
 			description <- s.description,
 			startDate <- s.startDate,
@@ -75,7 +75,7 @@ rule CoolProcess2AgriProcess {
 			weight <- s.weight,
 			actionHistory <- s.actionHistory,
 			location<-s.location.name,
-			itemProcess <- s.itemProcess
+			plant <- s.itemProcess
 		)
 }
 

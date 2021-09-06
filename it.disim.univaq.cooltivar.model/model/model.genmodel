@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/it.disim.univaq.cooltivar.model/src-gen" creationIcons="false"
-    editDirectory="/it.disim.univaq.cooltivar.model.edit/src-gen" editorDirectory="/it.disim.univaq.cooltivar.model.editor/src-gen"
-    modelPluginID="it.disim.univaq.cooltivar.model" modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.disim.univaq.cooltivar.model/src" modelPluginID="it.disim.univaq.cooltivar.model"
+    modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>model.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Model" basePackage="it.disim.univaq.cooltivar" disposableProviderFactory="true"
-      ecorePackage="model.ecore#/">
+  <genPackages prefix="Cooltivar" disposableProviderFactory="true" ecorePackage="model.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//ProcessStatus">
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProcessStatus/DRAFT"/>
       <genEnumLiterals ecoreEnumLiteral="model.ecore#//ProcessStatus/PROGRESS"/>
@@ -38,7 +34,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Descripted/name"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ItemProcess">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/itemProcessType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/itemProcessType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/problems"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/author"/>
     </genClasses>
@@ -60,7 +56,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/endDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/status"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Process/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Process/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Process/weight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Process/actionHistory"/>
       <genOperations ecoreOperation="model.ecore#//Process/checkFutureDate"/>

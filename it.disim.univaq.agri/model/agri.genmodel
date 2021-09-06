@@ -32,14 +32,20 @@
     </genEnums>
     <genClasses ecoreClass="agri.ecore#//Agri">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/user"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/problem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/solution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/itemProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/action"/>
     </genClasses>
     <genClasses ecoreClass="agri.ecore#//Descripted">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Descripted/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Descripted/name"/>
     </genClasses>
-    <genClasses ecoreClass="agri.ecore#//ItemProcess">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//ItemProcess/problems"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//ItemProcess/author"/>
+    <genClasses ecoreClass="agri.ecore#//Plant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Plant/problems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Plant/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Plant/plantSpecies"/>
     </genClasses>
     <genClasses ecoreClass="agri.ecore#//User">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//User/email"/>
@@ -50,17 +56,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/solutions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/problems"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/itemProcess"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//User/cultivations"/>
     </genClasses>
-    <genClasses ecoreClass="agri.ecore#//Process">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Process/itemProcess"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/startDate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/endDate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/status"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/weight"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Process/actionHistory"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Process/location"/>
-      <genOperations ecoreOperation="agri.ecore#//Process/checkFutureDate"/>
+    <genClasses ecoreClass="agri.ecore#//Cultivation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference agri.ecore#//Cultivation/plant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Cultivation/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Cultivation/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Cultivation/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Cultivation/weight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Cultivation/actionHistory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Cultivation/location"/>
+      <genOperations ecoreOperation="agri.ecore#//Cultivation/checkFutureDate"/>
     </genClasses>
     <genClasses ecoreClass="agri.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Action/startDate"/>

@@ -2,9 +2,7 @@
 <cooltivar:Application
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:cooltivar="http://it.disim.univaq.cooltivar.model"
-    xsi:schemaLocation="http://it.disim.univaq.cooltivar.model model.ecore">
+    xmlns:cooltivar="http://it.disim.univaq.cooltivar.model">
   <user name="Admin1"
       email="a@a.com"
       username="comandoio"
@@ -21,24 +19,42 @@
         process="//@user.0/@itemProcess.0"/>
     <itemProcess
         name="fagioli"
-        author="//@user.0"/>
+        author="//@user.0">
+      <itemProcessType
+          description="Fagioli spagnoli rossi"
+          name="Fagiolo Spagnolo"/>
+    </itemProcess>
     <itemProcess
         name="pomodori"
-        author="//@user.0"/>
+        author="//@user.0">
+      <itemProcessType
+          description="Pomodoro San Marzano Lungo"
+          name="San Marzano"/>
+    </itemProcess>
     <itemProcess
         name="zucchini"
-        author="//@user.0"/>
+        author="//@user.0">
+      <itemProcessType
+          description="zucchina romana"
+          name="zucchina romana"/>
+    </itemProcess>
   </user>
   <user name="Gianni Coldiretti"
       email="g@g.it"
       username="giannetto"
       uname="gianni"
       birthdate="0006-06-03T00:00:00.000+0100"
-      surname="rossi">
+      surname="rossi"
+      userType="BASIC">
     <process
+        name="Coltivazione Fagioli"
+        itemProcess="//@user.0/@itemProcess.0"
         startDate="0006-07-14T00:00:00.000+0100"
         endDate="0006-07-15T00:00:00.000+0100"
         weight="1.0">
+      <location
+          description="Terreno Piccolo Argilloso"
+          name="Terreno Piccolo"/>
       <actionHistory
           name="report afidi"
           startDate="0006-07-14T00:00:00.000+0100"
