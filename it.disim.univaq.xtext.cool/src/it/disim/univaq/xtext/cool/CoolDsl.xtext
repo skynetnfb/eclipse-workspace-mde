@@ -1,9 +1,0 @@
-grammar it.disim.univaq.xtext.cool.CoolDsl with org.eclipse.xtext.common.Terminals
-
-generate coolDsl "http://www.disim.it/univaq/xtext/cool/CoolDsl"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
