@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: it.disim.univaq.porcessmanagement.edit;singleton:=true
+Bundle-SymbolicName: it.disim.univaq.processmanagement.edit;singleton:=true
 Automatic-Module-Name: it.disim.univaq.porcessmanagement.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
