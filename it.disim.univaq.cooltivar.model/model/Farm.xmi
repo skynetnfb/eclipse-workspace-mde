@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cooltivar:Application
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:cooltivar="http://it.disim.univaq.cooltivar.model">
+  <user description="Admin Farm"
+      name="AdminFarm"
+      email="a@a.it"
+      username="AdminFarm"
+      uname="AdminFarm"
+      birthdate="1960-02-01T00:00:00.000+0100"
+      surname="AdminFarm">
+    <solutions
+        description="Trattamento Malattia Bovini"
+        name="Trattamento Malattia Bovini"
+        author="//@user.0"
+        problems="//@user.0/@problems.0"/>
+    <solutions
+        description="Trattamento Generico"
+        name="Trattamento Generico"
+        author="//@user.0"
+        problems="//@user.0/@problems.1 //@user.0/@problems.0"/>
+    <problems
+        description="Malnutrizione"
+        name="Malattia Bovini"
+        author="//@user.0"
+        process="//@user.0/@itemProcess.1"/>
+    <problems
+        description=" Malattia"
+        name="Malattia Ovini"
+        author="//@user.0"
+        process="//@user.0/@itemProcess.0"/>
+    <itemProcess
+        description="Allevamento Ovini"
+        name="Allevamento Ovini"
+        author="//@user.0"/>
+    <itemProcess
+        description="Allevamento Bovini"
+        name="Allevamento Bovini"
+        author="//@user.0"/>
+    <itemProcess
+        description="Allevamento Suini"
+        name="Allevamento Suini"
+        author="//@user.0"/>
+  </user>
+  <user description="Descrizione Farmer"
+      name="Farmer"
+      email="Farmer@Farmer.it"
+      username="Farmer"
+      uname="Farmer"
+      birthdate="1980-02-01T00:00:00.000+0100"
+      surname="Farmer"
+      userType="BASIC">
+    <process
+        description="Allevamento Bovini"
+        name="Allevamento bovini Argentini"
+        itemProcess="//@user.0/@itemProcess.1"
+        startDate="2021-01-10T00:00:00.000+0100"
+        endDate="2022-01-01T00:00:00.000+0100"
+        status="PROGRESS"
+        weight="1000.0">
+      <location
+          description="Fattoria Argentina"
+          name="Fattoria Argentina"/>
+      <actionHistory
+          description="Nutrizione"
+          name="Nutrizione"
+          startDate="2021-01-01T00:00:00.000+0100"
+          endDate="2022-02-01T00:00:00.000+0100"
+          process="//@user.1/@process.0"/>
+      <actionHistory
+          description="Trattamento Vitamine"
+          name="Trattamento Vitamine"
+          startDate="2021-01-01T00:00:00.000+0100"
+          endDate="2022-01-01T00:00:00.000+0100"
+          solution="//@user.0/@solutions.1"
+          actionsType="SOLUTION"
+          process="//@user.1/@process.0"/>
+    </process>
+  </user>
+</cooltivar:Application>
