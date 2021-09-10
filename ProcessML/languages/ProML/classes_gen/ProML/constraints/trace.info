@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="13,0,33,0" name="ProML.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:5f77f3d9-8f47-450f-ba5a-0eba7bc129ab(ProML.constraints)/2708398504493680778">
+    <file name="Process_Constraints.java">
+      <node id="2708398504493680778" at="20,32,21,31" concept="8" />
+      <node id="2708398504493680779" at="25,61,26,42" concept="8" />
+      <node id="2708398504493680779" at="29,38,30,18" concept="5" />
+      <node id="2708398504493680779" at="32,0,33,0" concept="6" trace="validatePropertyBreakingPoint" />
+      <node id="2708398504493680779" at="34,109,35,100" concept="4" />
+      <node id="2708398504493680779" at="36,53,37,75" concept="1" />
+      <node id="2708398504493680779" at="38,7,39,20" concept="5" />
+      <node id="2708398504493683274" at="41,82,42,31" concept="5" />
+      <node id="2708398504493680778" at="46,84,47,119" concept="4" />
+      <node id="2708398504493680779" at="47,119,48,65" concept="1" />
+      <node id="2708398504493680778" at="48,65,49,22" concept="5" />
+      <node id="2708398504493680778" at="53,0,54,0" concept="6" trace="Process$2x" />
+      <node id="2708398504493680778" at="57,0,58,0" concept="6" trace="weight$6DCw" />
+      <node id="2708398504493680778" at="20,0,23,0" concept="0" trace="Process_Constraints#()V" />
+      <node id="2708398504493680779" at="25,0,28,0" concept="0" trace="Weight_Property#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="2708398504493680779" at="35,100,38,7" concept="2" />
+      <node id="2708398504493680779" at="41,0,44,0" concept="7" trace="staticValidateProperty#(Lorg/jetbrains/mps/openapi/model/SNode;I)Z" />
+      <node id="2708398504493680779" at="28,0,32,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="2708398504493680778" at="45,0,51,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <node id="2708398504493680779" at="33,0,41,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2708398504493680778" at="20,32,21,31" />
+      <scope id="2708398504493680779" at="25,61,26,42" />
+      <scope id="2708398504493680779" at="29,38,30,18" />
+      <scope id="2708398504493680779" at="36,53,37,75" />
+      <scope id="2708398504493682348" at="41,82,42,31" />
+      <scope id="2708398504493680778" at="20,0,23,0" />
+      <scope id="2708398504493680779" at="25,0,28,0">
+        <var name="container" id="2708398504493680779" />
+      </scope>
+      <scope id="2708398504493680779" at="41,0,44,0">
+        <var name="node" id="2708398504493680779" />
+        <var name="propertyValue" id="2708398504493680779" />
+      </scope>
+      <scope id="2708398504493680778" at="46,84,49,22">
+        <var name="properties" id="2708398504493680778" />
+      </scope>
+      <scope id="2708398504493680779" at="28,0,32,0" />
+      <scope id="2708398504493680779" at="34,109,39,20">
+        <var name="result" id="2708398504493680779" />
+      </scope>
+      <scope id="2708398504493680778" at="45,0,51,0" />
+      <scope id="2708398504493680779" at="33,0,41,0">
+        <var name="checkingNodeContext" id="2708398504493680779" />
+        <var name="node" id="2708398504493680779" />
+        <var name="propertyValue" id="2708398504493680779" />
+      </scope>
+      <unit id="2708398504493680778" at="52,0,55,0" name="ProML.constraints.Process_Constraints$CONCEPTS" />
+      <unit id="2708398504493680778" at="56,0,59,0" name="ProML.constraints.Process_Constraints$PROPS" />
+      <unit id="2708398504493680779" at="24,0,45,0" name="ProML.constraints.Process_Constraints$Weight_Property" />
+      <unit id="2708398504493680778" at="19,0,60,0" name="ProML.constraints.Process_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:5f77f3d9-8f47-450f-ba5a-0eba7bc129ab(ProML.constraints)/2708398504493813908">
+    <file name="User_Constraints.java">
+      <node id="2708398504493813908" at="20,29,21,28" concept="8" />
+      <node id="2708398504493813909" at="25,63,26,44" concept="8" />
+      <node id="2708398504493813909" at="29,38,30,18" concept="5" />
+      <node id="2708398504493813909" at="32,0,33,0" concept="6" trace="validatePropertyBreakingPoint" />
+      <node id="2708398504493813909" at="34,109,35,99" concept="4" />
+      <node id="2708398504493813909" at="36,53,37,75" concept="1" />
+      <node id="2708398504493813909" at="38,7,39,20" concept="5" />
+      <node id="2708398504493814334" at="41,85,42,41" concept="5" />
+      <node id="2708398504493813908" at="46,84,47,119" concept="4" />
+      <node id="2708398504493813909" at="47,119,48,69" concept="1" />
+      <node id="2708398504493813908" at="48,69,49,22" concept="5" />
+      <node id="2708398504493813908" at="53,0,54,0" concept="6" trace="User$ix" />
+      <node id="2708398504493813908" at="57,0,58,0" concept="6" trace="username$UuLn" />
+      <node id="2708398504493813908" at="20,0,23,0" concept="0" trace="User_Constraints#()V" />
+      <node id="2708398504493813909" at="25,0,28,0" concept="0" trace="Username_Property#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="2708398504493813909" at="35,99,38,7" concept="2" />
+      <node id="2708398504493813909" at="41,0,44,0" concept="7" trace="staticValidateProperty#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2708398504493813909" at="28,0,32,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="2708398504493813908" at="45,0,51,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <node id="2708398504493813909" at="33,0,41,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2708398504493813908" at="20,29,21,28" />
+      <scope id="2708398504493813909" at="25,63,26,44" />
+      <scope id="2708398504493813909" at="29,38,30,18" />
+      <scope id="2708398504493813909" at="36,53,37,75" />
+      <scope id="2708398504493813998" at="41,85,42,41" />
+      <scope id="2708398504493813908" at="20,0,23,0" />
+      <scope id="2708398504493813909" at="25,0,28,0">
+        <var name="container" id="2708398504493813909" />
+      </scope>
+      <scope id="2708398504493813909" at="41,0,44,0">
+        <var name="node" id="2708398504493813909" />
+        <var name="propertyValue" id="2708398504493813909" />
+      </scope>
+      <scope id="2708398504493813908" at="46,84,49,22">
+        <var name="properties" id="2708398504493813908" />
+      </scope>
+      <scope id="2708398504493813909" at="28,0,32,0" />
+      <scope id="2708398504493813909" at="34,109,39,20">
+        <var name="result" id="2708398504493813909" />
+      </scope>
+      <scope id="2708398504493813908" at="45,0,51,0" />
+      <scope id="2708398504493813909" at="33,0,41,0">
+        <var name="checkingNodeContext" id="2708398504493813909" />
+        <var name="node" id="2708398504493813909" />
+        <var name="propertyValue" id="2708398504493813909" />
+      </scope>
+      <unit id="2708398504493813908" at="52,0,55,0" name="ProML.constraints.User_Constraints$CONCEPTS" />
+      <unit id="2708398504493813908" at="56,0,59,0" name="ProML.constraints.User_Constraints$PROPS" />
+      <unit id="2708398504493813909" at="24,0,45,0" name="ProML.constraints.User_Constraints$Username_Property" />
+      <unit id="2708398504493813908" at="19,0,60,0" name="ProML.constraints.User_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:5f77f3d9-8f47-450f-ba5a-0eba7bc129ab(ProML.constraints)/2708398504493822297">
+    <file name="Problem_Constraints.java">
+      <node id="2708398504493822297" at="20,32,21,31" concept="8" />
+      <node id="2708398504493822298" at="25,59,26,40" concept="8" />
+      <node id="2708398504493822298" at="29,38,30,18" concept="5" />
+      <node id="2708398504493822298" at="32,0,33,0" concept="6" trace="validatePropertyBreakingPoint" />
+      <node id="2708398504493822298" at="34,109,35,99" concept="4" />
+      <node id="2708398504493822298" at="36,53,37,75" concept="1" />
+      <node id="2708398504493822298" at="38,7,39,20" concept="5" />
+      <node id="2708398504493822496" at="41,85,42,41" concept="5" />
+      <node id="2708398504493822297" at="46,84,47,119" concept="4" />
+      <node id="2708398504493822298" at="47,119,48,61" concept="1" />
+      <node id="2708398504493822297" at="48,61,49,22" concept="5" />
+      <node id="2708398504493822297" at="53,0,54,0" concept="6" trace="Problem$Ou" />
+      <node id="2708398504493822297" at="57,0,58,0" concept="6" trace="name$MnvL" />
+      <node id="2708398504493822297" at="20,0,23,0" concept="0" trace="Problem_Constraints#()V" />
+      <node id="2708398504493822298" at="25,0,28,0" concept="0" trace="Name_Property#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="2708398504493822298" at="35,99,38,7" concept="2" />
+      <node id="2708398504493822298" at="41,0,44,0" concept="7" trace="staticValidateProperty#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2708398504493822298" at="28,0,32,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="2708398504493822297" at="45,0,51,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <node id="2708398504493822298" at="33,0,41,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2708398504493822297" at="20,32,21,31" />
+      <scope id="2708398504493822298" at="25,59,26,40" />
+      <scope id="2708398504493822298" at="29,38,30,18" />
+      <scope id="2708398504493822298" at="36,53,37,75" />
+      <scope id="2708398504493822387" at="41,85,42,41" />
+      <scope id="2708398504493822297" at="20,0,23,0" />
+      <scope id="2708398504493822298" at="25,0,28,0">
+        <var name="container" id="2708398504493822298" />
+      </scope>
+      <scope id="2708398504493822298" at="41,0,44,0">
+        <var name="node" id="2708398504493822298" />
+        <var name="propertyValue" id="2708398504493822298" />
+      </scope>
+      <scope id="2708398504493822297" at="46,84,49,22">
+        <var name="properties" id="2708398504493822297" />
+      </scope>
+      <scope id="2708398504493822298" at="28,0,32,0" />
+      <scope id="2708398504493822298" at="34,109,39,20">
+        <var name="result" id="2708398504493822298" />
+      </scope>
+      <scope id="2708398504493822297" at="45,0,51,0" />
+      <scope id="2708398504493822298" at="33,0,41,0">
+        <var name="checkingNodeContext" id="2708398504493822298" />
+        <var name="node" id="2708398504493822298" />
+        <var name="propertyValue" id="2708398504493822298" />
+      </scope>
+      <unit id="2708398504493822297" at="52,0,55,0" name="ProML.constraints.Problem_Constraints$CONCEPTS" />
+      <unit id="2708398504493822297" at="56,0,59,0" name="ProML.constraints.Problem_Constraints$PROPS" />
+      <unit id="2708398504493822298" at="24,0,45,0" name="ProML.constraints.Problem_Constraints$Name_Property" />
+      <unit id="2708398504493822297" at="19,0,60,0" name="ProML.constraints.Problem_Constraints" />
+    </file>
+  </root>
+</debug-info>
+
