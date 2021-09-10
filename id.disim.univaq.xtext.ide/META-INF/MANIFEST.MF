@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: id.disim.univaq.xtext.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: id.disim.univaq.xtext.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: id.disim.univaq.xtext.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: id.disim.univaq.xtext,
+ it.disim.univaq.agri,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

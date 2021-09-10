@@ -1,0 +1,9 @@
+grammar it.disim.univaq.xtext2.Cool2 with org.eclipse.xtext.common.Terminals
+
+generate cool2 "http://www.disim.it/univaq/xtext2/Cool2"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
