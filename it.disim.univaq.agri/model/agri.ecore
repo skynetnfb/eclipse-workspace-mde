@@ -18,10 +18,6 @@
         eType="#//Solution" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcess" upperBound="-1"
         eType="#//Plant" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
-        eType="#//Cultivation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
-        eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Descripted">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

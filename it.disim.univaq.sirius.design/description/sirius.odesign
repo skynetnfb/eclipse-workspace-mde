@@ -149,13 +149,22 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="subCultivationNode" semanticCandidatesExpression="feature:eAllContents" domainClass="agri::Cultivation">
-            <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+          <subNodeMappings name="subCult" semanticCandidatesExpression="feature:eAllContents" domainClass="agri::Cultivation"/>
+          <subContainerMappings name="subCultivationContainerNode" semanticCandidatesExpression="feature:eAllContents" domainClass="agri::Cultivation">
+            <subNodeMappings name="subActionCultivationNode" semanticCandidatesExpression="feature:eAllContents" domainClass="agri::Action">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
-          </subNodeMappings>
+          </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -209,15 +218,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateActionNode" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='ActionNode']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Action" referenceName="action"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="CreatePlantNode" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='PlantNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -246,6 +246,51 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="solutions" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateSubPlant" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='UserContainerNode']/@subNodeMappings[name='subPlantNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Plant" referenceName="itemProcess"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateSubProblemNode" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='UserContainerNode']/@subNodeMappings[name='subProblemNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Problem" referenceName="problems"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateSubSolutionNode" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='UserContainerNode']/@subNodeMappings[name='subSolutionNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Solution" referenceName="solutions"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createSubCult" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='UserContainerNode']/@subNodeMappings[name='subCult']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Cultivation" referenceName="cultivations"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateSubAction" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='UserContainerNode']/@subContainerMappings[name='subCultivationContainerNode']/@subNodeMappings[name='subActionCultivationNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="agri::Action" referenceName="actionHistory"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
