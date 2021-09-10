@@ -12,13 +12,24 @@
   </tr>
   [% for (action in Action){%]
   <tr>
-  	<td> - [%=action.actionsType%] - </td>
-     <td>[%=action.startDate.getDay()%] / [%=action.startDate.getMonth()%] / [%=action.startDate.getYear()%]</td>
-     <td>[%=action.endDate.getDay()%] / [%=action.endDate.getMonth()%] / [%=action.endDate.getYear()%]</td>
-    <td>[%=action.problem%]</td>
-    <td>[%=action.solution%]</td>
-    <td> - [%=action.actionStatus%] - </td>
-    <td> - [%=action.process%] - </td>
+  	<td>[%=action.actionsType%]</td>
+     <td>[%=action.startDate.getDay()%] / [%=action.startDate.getMonth()%] / [%=action.startDate.getYear()+1900%]</td>
+     <td>[%=action.endDate.getDay()%] / [%=action.endDate.getMonth()%] / [%=action.endDate.getYear()+1900%]</td>
+    <td>[% if (not action.problem.isUndefined()){%]
+   		[%=action.problem.name %]
+    	[%}%]
+    </td>
+    <td>
+    	[% if (not action.solution.isUndefined()){%]
+    	[%=action.solution.name %]
+    	[%}%]
+	</td>
+    <td>[%=action.actionStatus%]</td>
+    <td>
+    	[% if (not action.process.isUndefined()){%]
+    	[%=action.process.name %] 
+    	[%}%]
+    </td>
   </tr>
   [%}%]
 </table>

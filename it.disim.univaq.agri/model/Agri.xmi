@@ -1,62 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agri:Agri xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:agri="http://www.example.org/agri">
-  <user description="amministratore"
-      name="Admin1"
-      email="mail"
-      username="Admin1"
-      birthdate="0006-06-23T00:00:00.000+0100">
-    <solutions
-        description="Trattamento"
-        name="Trattamento"
-        author="//@user.0"
-        problems="//@user.0/@problems.0"/>
-    <problems
-        description="Afidi"
-        name="Afidi"
-        author="//@user.0"
-        solutions="//@user.0/@solutions.0"
-        process="//@user.0/@itemProcess.0"/>
-    <itemProcess
-        description="Fagioli Rossi"
-        name="Fagioli Rossi"
-        author="//@user.0"
-        plantSpecies="fagiolo rosso"/>
+<agri:Agri xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:agri="http://www.example.org/agri" xmlns:agri_1="http://it.disim.univaq.agri">
+  <user description="amministratore" name="Admin1" email="mail" username="Admin1" birthdate="0006-06-23T00:00:00.000+0100">
+    <solutions description="Trattamento" name="Trattamento" author="//@user.0" problems="//@user.0/@problems.0"/>
+    <problems description="Afidi" name="Afidi" author="//@user.0" solutions="//@user.0/@solutions.0" process="//@user.0/@itemProcess.0"/>
+    <itemProcess description="Fagioli Rossi" name="Fagioli Rossi" author="//@user.0" plantSpecies="fagiolo rosso"/>
   </user>
-  <user description="coltivatore"
-      name="Gianni"
-      email="mail"
-      username="Rossi"
-      birthdate="0006-06-03T00:00:00.000+0100"
-      userType="BASIC">
-    <cultivations
-        description="coltivazione amatoriale"
-        name="Coltivazione Fagioli"
-        plant="//@user.0/@itemProcess.0"
-        startDate="0006-07-14T00:00:00.000+0100"
-        endDate="0006-07-15T00:00:00.000+0100"
-        location="Orto Piccolo">
-      <actionHistory
-          description="Report Afidi"
-          name="Report Afidi"
-          startDate="0006-07-13T00:00:00.000+0100"
-          endDate="0006-07-14T00:00:00.000+0100"
-          problem="//@user.0/@problems.0"
-          actionsType="SOLUTION"
-          process="//@user.1/@cultivations.0"/>
-      <actionHistory
-          description="applicato il trattamento"
-          name="Trattamento Afidi"
-          startDate="0006-07-13T00:00:00.000+0100"
-          endDate="0006-07-14T00:00:00.000+0100"
-          solution="//@user.0/@solutions.0"
-          process="//@user.1/@cultivations.0"/>
-      <actionHistory
-          description="irrigazione giornaliera"
-          name="Irrigazione"
-          startDate="0006-07-14T00:00:00.000+0100"
-          endDate="0006-07-14T00:00:00.000+0100"/>
+  <user description="coltivatore" name="Gianni" email="mail" username="Rossi" birthdate="0006-06-03T00:00:00.000+0100" userType="BASIC">
+    <cultivations description="coltivazione amatoriale" name="Coltivazione Fagioli" plant="//@user.0/@itemProcess.0" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-15T00:00:00.000+0100" location="Orto Piccolo">
+      <actionHistory description="Report Afidi" name="Report Afidi" startDate="0006-07-13T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100" problem="//@user.0/@problems.0" actionsType="SOLUTION" process="//@user.1/@cultivations.0"/>
+      <actionHistory description="applicato il trattamento" name="Trattamento Afidi" startDate="0006-07-13T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100" solution="//@user.0/@solutions.0" process="//@user.1/@cultivations.0"/>
+      <actionHistory description="irrigazione giornaliera" name="Irrigazione" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100"/>
     </cultivations>
   </user>
+  <itemProcess xsi:type="agri_1:ItemProcess"/>
+  <process xsi:type="agri_1:Process"/>
 </agri:Agri>

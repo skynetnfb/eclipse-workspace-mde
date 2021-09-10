@@ -12,12 +12,25 @@
   </tr>
   [% for (process in Process){%]
   <tr>
-    <td style=" border: 1px solid gray; padding = 5px;">[%=process.itemProcess.name%]</td>
-     <td style=" border: 1px solid gray; padding = 5px;">[%=process.startDate.getDay()%] / [%=process.startDate.getMonth()%] / [%=process.startDate.getYear()%]</td>
-     <td style=" border: 1px solid gray; padding = 5px;">[%=process.endDate.getDay()%] / [%=process.endDate.getMonth()%] / [%=process.endDate.getYear()%]</td>
-    <td style=" border: 1px solid gray; padding = 5px;">[%=process.location.name%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">
+    [% if (not process.itemProcess.isUndefined()){%]
+    [%=process.itemProcess.name%]
+    [%}%]
+    </td>
+     <td style=" border: 1px solid gray; padding = 5px;">[%=process.startDate.getDay()%] / [%=process.startDate.getMonth()%] / [%=process.startDate.getYear()+1900%]</td>
+     <td style=" border: 1px solid gray; padding = 5px;">[%=process.endDate.getDay()%] / [%=process.endDate.getMonth()%] / [%=process.endDate.getYear()+1900%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">
+    [% if (not process.location.isUndefined()){%]
+    [%=process.location.name%]</td>
+    [%}%]
     <td style=" border: 1px solid gray; padding = 5px;">[%=process.weight%]</td>
-    <td style=" border: 1px solid gray; padding = 5px;">[% for (action in process.actionHistory){%][%=action.name%]-->[%}%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">
+    [% for (action in process.actionHistory){%]
+    [% if (not action.isUndefined()){%]
+    [%=action.name%]-->
+    [%}%]
+    [%}%]
+    </td>
   </tr>
 [%}%]
 </table>

@@ -3,11 +3,12 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:cooltivar="http://it.disim.univaq.cooltivar.model">
-  <user name="Admin1"
+  <user description="Amministratore e moderatore"
+      name="Admin1"
       email="a@a.com"
-      username="comandoio"
+      username="Amministratore"
       uname="guido"
-      birthdate="0006-06-13T00:00:00.000+0100"
+      birthdate="1982-01-01T00:00:00.000+0100"
       surname="la vespa">
     <solutions
         name="trattamento afidi"
@@ -43,34 +44,34 @@
       email="g@g.it"
       username="giannetto"
       uname="gianni"
-      birthdate="0006-06-03T00:00:00.000+0100"
+      birthdate="1997-01-01T00:00:00.000+0100"
       surname="rossi"
       userType="BASIC">
     <process
         name="Coltivazione Fagioli"
         itemProcess="//@user.0/@itemProcess.0"
-        startDate="0006-07-14T00:00:00.000+0100"
-        endDate="0006-07-15T00:00:00.000+0100"
+        startDate="2021-01-01T00:00:00.000+0100"
+        endDate="2023-01-01T00:00:00.000+0100"
         weight="1.0">
       <location
           description="Terreno Piccolo Argilloso"
           name="Terreno Piccolo"/>
       <actionHistory
           name="report afidi"
-          startDate="0006-07-14T00:00:00.000+0100"
-          endDate="0006-07-15T00:00:00.000+0100"
+          startDate="2021-02-01T00:00:00.000+0100"
+          endDate="2022-01-01T00:00:00.000+0100"
           problem="//@user.0/@problems.0"
           actionsType="PROBLEM"
           process="//@user.1/@process.0"/>
       <actionHistory
           name="irrigazione"
-          startDate="0006-07-14T00:00:00.000+0100"
-          endDate="0006-07-15T00:00:00.000+0100"
+          startDate="2021-01-01T00:00:00.000+0100"
+          endDate="2022-01-01T00:00:00.000+0100"
           process="//@user.1/@process.0"/>
       <actionHistory
           name="trattamento afidi"
-          startDate="0006-07-13T00:00:00.000+0100"
-          endDate="0007-08-14T00:00:00.000+0100"
+          startDate="2021-01-01T00:00:00.000+0100"
+          endDate="2022-01-01T00:00:00.000+0100"
           solution="//@user.0/@solutions.0"
           actionsType="SOLUTION"
           process="//@user.1/@process.0"/>

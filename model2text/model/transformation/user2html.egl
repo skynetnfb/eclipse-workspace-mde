@@ -13,7 +13,7 @@
     <td>[%=user.username%]</td>
     <td>[%=user.name%]</td>
     <td>[%=user.surname%]</td>
-    <td>[%=user.birthdate.getDay()%] / [%=user.birthdate.getMonth()%] / [%=user.birthdate.getYear()%]</td>
+    <td>[%=user.birthdate.getDay()%] / [%=user.birthdate.getMonth()%] / [%=user.birthdate.getYear()+1900%]</td>
     <td>[%=user.userType%]</td>
   </tr>
   [%}%]

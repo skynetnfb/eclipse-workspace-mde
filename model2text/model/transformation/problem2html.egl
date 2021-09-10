@@ -9,7 +9,11 @@
   </tr>
   [% for (problem in Problem){%]
   <tr>
-  	<td style=" border: 1px solid gray; padding = 5px;">[%=problem.process.name%]</td>
+  	<td style=" border: 1px solid gray; padding = 5px;">
+  	[% if (not problem.process.isUndefined()){%]
+   	[%=problem.process.name%]
+    [%}%]
+  	</td>
     <td style=" border: 1px solid gray; padding = 5px;">[%=problem.name%]</td>
     <td style=" border: 1px solid gray; padding = 5px;">[%=problem.solutions%]</td>
   </tr>

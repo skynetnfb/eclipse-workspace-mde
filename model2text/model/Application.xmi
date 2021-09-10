@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cooltivar:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cooltivar="http://it.disim.univaq.cooltivar.model">
-  <user name="Admin1" email="a@a.com" username="comandoio" uname="guido" birthdate="0006-06-13T00:00:00.000+0100" surname="la vespa">
-    <solutions name="trattamento afidi" author="//@user.0" problems="//@user.0/@problems.0"/>
-    <problems name="afidi" author="//@user.0" process="//@user.0/@itemProcess.0"/>
-    <itemProcess name="fagioli" author="//@user.0"/>
-    <itemProcess name="pomodori" author="//@user.0"/>
-    <itemProcess name="zucchini" author="//@user.0"/>
+<cooltivar:Application
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:cooltivar="http://it.disim.univaq.cooltivar.model">
+  <user name="Admin1"
+      email="a@a.com"
+      username="comandoio"
+      uname="guido"
+      birthdate="0006-06-13T00:00:00.000+0100"
+      surname="la vespa">
+    <solutions
+        name="trattamento afidi"
+        author="//@user.0"
+        problems="//@user.0/@problems.0"/>
+    <problems
+        name="afidi"
+        author="//@user.0"
+        process="//@user.0/@itemProcess.0"/>
+    <itemProcess
+        name="fagioli"
+        author="//@user.0"/>
+    <itemProcess
+        name="pomodori"
+        author="//@user.0"/>
+    <itemProcess
+        name="zucchini"
+        author="//@user.0"/>
   </user>
-  <user name="Gianni Coldiretti" email="g@g.it" username="giannetto" uname="gianni" birthdate="0006-06-03T00:00:00.000+0100" surname="rossi">
-    <process startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-15T00:00:00.000+0100" weight="1.0">
-      <actionHistory name="report afidi" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-15T00:00:00.000+0100" problem="//@user.0/@problems.0" actionsType="PROBLEM" process="//@user.1/@process.0"/>
-      <actionHistory name="irrigazione" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-15T00:00:00.000+0100" process="//@user.1/@process.0"/>
-      <actionHistory name="trattamento afidi" startDate="0006-07-13T00:00:00.000+0100" endDate="0007-08-14T00:00:00.000+0100" solution="//@user.0/@solutions.0" actionsType="SOLUTION" process="//@user.1/@process.0"/>
+  <user name="Gianni Coldiretti"
+      email="g@g.it"
+      username="giannetto"
+      uname="gianni"
+      birthdate="0006-06-03T00:00:00.000+0100"
+      surname="rossi">
+    <process
+        startDate="0006-07-14T00:00:00.000+0100"
+        endDate="0006-07-15T00:00:00.000+0100"
+        weight="1.0">
+      <actionHistory
+          name="report afidi"
+          startDate="2020-01-01T00:00:00.000+0100"
+          endDate="2021-01-01T00:00:00.000+0100"
+          problem="//@user.0/@problems.0"
+          actionsType="PROBLEM"
+          process="//@user.1/@process.0"/>
+      <actionHistory
+          name="irrigazione"
+          startDate="0006-07-14T00:00:00.000+0100"
+          endDate="0006-07-15T00:00:00.000+0100"
+          process="//@user.1/@process.0"/>
+      <actionHistory
+          name="trattamento afidi"
+          startDate="0006-07-13T00:00:00.000+0100"
+          endDate="0007-08-14T00:00:00.000+0100"
+          solution="//@user.0/@solutions.0"
+          actionsType="SOLUTION"
+          process="//@user.1/@process.0"/>
     </process>
   </user>
 </cooltivar:Application>

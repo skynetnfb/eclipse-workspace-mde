@@ -10,7 +10,11 @@
   <tr>
     <td style=" border: 1px solid gray; padding = 5px;">[%=itemProcess.name%]</td>
     <td style=" border: 1px solid gray; padding = 5px;">[%=itemProcess.description%]</td>
-    <td style=" border: 1px solid gray; padding = 5px;">[%=itemProcess.itemProcessType%]</td>
+    <td style=" border: 1px solid gray; padding = 5px;">
+    	[% if (not itemProcess.itemProcessType.isUndefined()){%]
+    	[%=itemProcess.itemProcessType.name%]
+    	[%}%]
+    </td>
   </tr>
   [%}%]
   </table>
