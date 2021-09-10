@@ -2,10 +2,8 @@
  */
 package it.disim.univaq.agri.impl;
 
-import it.disim.univaq.agri.Action;
 import it.disim.univaq.agri.Agri;
 import it.disim.univaq.agri.AgriPackage;
-import it.disim.univaq.agri.Cultivation;
 import it.disim.univaq.agri.Plant;
 import it.disim.univaq.agri.Problem;
 import it.disim.univaq.agri.Solution;
@@ -37,8 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link it.disim.univaq.agri.impl.AgriImpl#getProblem <em>Problem</em>}</li>
  *   <li>{@link it.disim.univaq.agri.impl.AgriImpl#getSolution <em>Solution</em>}</li>
  *   <li>{@link it.disim.univaq.agri.impl.AgriImpl#getItemProcess <em>Item Process</em>}</li>
- *   <li>{@link it.disim.univaq.agri.impl.AgriImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link it.disim.univaq.agri.impl.AgriImpl#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,26 +79,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 	 * @ordered
 	 */
 	protected EList<Plant> itemProcess;
-
-	/**
-	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProcess()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Cultivation> process;
-
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Action> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,30 +152,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Cultivation> getProcess() {
-		if (process == null) {
-			process = new EObjectContainmentEList<Cultivation>(Cultivation.class, this, AgriPackage.AGRI__PROCESS);
-		}
-		return process;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Action> getAction() {
-		if (action == null) {
-			action = new EObjectContainmentEList<Action>(Action.class, this, AgriPackage.AGRI__ACTION);
-		}
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -211,10 +163,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 			return ((InternalEList<?>) getSolution()).basicRemove(otherEnd, msgs);
 		case AgriPackage.AGRI__ITEM_PROCESS:
 			return ((InternalEList<?>) getItemProcess()).basicRemove(otherEnd, msgs);
-		case AgriPackage.AGRI__PROCESS:
-			return ((InternalEList<?>) getProcess()).basicRemove(otherEnd, msgs);
-		case AgriPackage.AGRI__ACTION:
-			return ((InternalEList<?>) getAction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,10 +183,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 			return getSolution();
 		case AgriPackage.AGRI__ITEM_PROCESS:
 			return getItemProcess();
-		case AgriPackage.AGRI__PROCESS:
-			return getProcess();
-		case AgriPackage.AGRI__ACTION:
-			return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,14 +212,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 			getItemProcess().clear();
 			getItemProcess().addAll((Collection<? extends Plant>) newValue);
 			return;
-		case AgriPackage.AGRI__PROCESS:
-			getProcess().clear();
-			getProcess().addAll((Collection<? extends Cultivation>) newValue);
-			return;
-		case AgriPackage.AGRI__ACTION:
-			getAction().clear();
-			getAction().addAll((Collection<? extends Action>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -300,12 +236,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 		case AgriPackage.AGRI__ITEM_PROCESS:
 			getItemProcess().clear();
 			return;
-		case AgriPackage.AGRI__PROCESS:
-			getProcess().clear();
-			return;
-		case AgriPackage.AGRI__ACTION:
-			getAction().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -326,10 +256,6 @@ public class AgriImpl extends MinimalEObjectImpl.Container implements Agri {
 			return solution != null && !solution.isEmpty();
 		case AgriPackage.AGRI__ITEM_PROCESS:
 			return itemProcess != null && !itemProcess.isEmpty();
-		case AgriPackage.AGRI__PROCESS:
-			return process != null && !process.isEmpty();
-		case AgriPackage.AGRI__ACTION:
-			return action != null && !action.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

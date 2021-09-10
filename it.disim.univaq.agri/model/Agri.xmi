@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agri:Agri xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:agri="http://it.disim.univaq.agri">
-  <user description="amministratore" name="Admin1" email="mail" username="Admin1" birthdate="0006-06-23T00:00:00.000+0100">
-    <solutions description="Trattamento" name="Trattamento" author="//@user.0" problems="//@user.0/@problems.0"/>
-    <problems description="Afidi" name="Afidi" author="//@user.0" solutions="//@user.0/@solutions.0" process="//@user.0/@itemProcess.0"/>
-    <itemProcess description="Fagioli Rossi" name="Fagioli Rossi" author="//@user.0" plantSpecies="fagiolo rosso"/>
+<agri:Agri xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:agri="http://it.disim.univaq.agri">
+  <user description="amministratore"
+      name="Admin1"
+      email="mail"
+      username="Admin1"
+      fullName="nome completo"
+      birthdate="0006-06-23T00:00:00.000+0100">
+    <solutions
+        description="Trattamento"
+        name="Trattamento"
+        author="//@user.0"
+        problems="//@user.0/@problems.0"/>
+    <problems
+        description="Afidi"
+        name="Afidi"
+        author="//@user.0"
+        solutions="//@user.0/@solutions.0"
+        process="//@user.0/@itemProcess.0"/>
+    <itemProcess
+        description="Fagioli Rossi"
+        name="Fagioli Rossi"
+        author="//@user.0"
+        plantSpecies="fagiolo rosso"/>
   </user>
-  <user description="coltivatore" name="Gianni" email="mail" username="Rossi" birthdate="0006-06-03T00:00:00.000+0100" userType="BASIC">
-    <cultivations description="coltivazione amatoriale" name="Coltivazione Fagioli" plant="//@user.0/@itemProcess.0" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-15T00:00:00.000+0100" location="Orto Piccolo">
-      <actionHistory description="Report Afidi" name="Report Afidi" startDate="0006-07-13T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100" problem="//@user.0/@problems.0" actionsType="SOLUTION" process="//@user.1/@cultivations.0"/>
-      <actionHistory description="applicato il trattamento" name="Trattamento Afidi" startDate="0006-07-13T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100" solution="//@user.0/@solutions.0" process="//@user.1/@cultivations.0"/>
-      <actionHistory description="irrigazione giornaliera" name="Irrigazione" startDate="0006-07-14T00:00:00.000+0100" endDate="0006-07-14T00:00:00.000+0100"/>
+  <user description="coltivatore"
+      name="Gianni"
+      email="mail"
+      username="Rossi"
+      fullName="nome completo"
+      birthdate="0006-06-03T00:00:00.000+0100"
+      userType="BASIC">
+    <cultivations
+        description="coltivazione amatoriale"
+        name="Coltivazione Fagioli"
+        plant="//@user.0/@itemProcess.0"
+        startDate="0006-07-14T00:00:00.000+0100"
+        endDate="0006-07-15T00:00:00.000+0100"
+        location="Orto Piccolo">
+      <actionHistory
+          description="Report Afidi"
+          name="Report Afidi"
+          startDate="0006-07-13T00:00:00.000+0100"
+          endDate="0006-07-14T00:00:00.000+0100"
+          problem="//@user.0/@problems.0"
+          actionsType="PROBLEM"
+          process="//@user.1/@cultivations.0"/>
+      <actionHistory
+          description="applicato il trattamento"
+          name="Trattamento Afidi"
+          startDate="0006-07-13T00:00:00.000+0100"
+          endDate="0006-07-14T00:00:00.000+0100"
+          solution="//@user.0/@solutions.0"
+          process="//@user.1/@cultivations.0"/>
+      <actionHistory
+          description="irrigazione giornaliera"
+          name="Irrigazione"
+          startDate="2020-01-01T00:00:00.000+0100"
+          endDate="2021-02-02T00:00:00.000+0100"
+          process="//@user.1/@cultivations.0"/>
     </cultivations>
-    <cultivations description="colt 2" name="coltivazione Melanzana" plant="//@user.2/@itemProcess.0" startDate="2021-01-02T00:00:00.000+0100" endDate="2022-02-02T00:00:00.000+0100" location="orto Grande">
-      <actionHistory description="" name="Irrigazione" startDate="2022-02-01T00:00:00.000+0100" endDate="2023-02-01T00:00:00.000+0100" process="//@user.1/@cultivations.1"/>
+    <cultivations
+        description="colt 2"
+        name="coltivazione Melanzana"
+        plant="//@user.2/@itemProcess.0"
+        startDate="2021-01-02T00:00:00.000+0100"
+        endDate="2022-02-02T00:00:00.000+0100"
+        location="orto Grande">
+      <actionHistory
+          description=""
+          name="Irrigazione"
+          startDate="2022-02-01T00:00:00.000+0100"
+          endDate="2023-02-01T00:00:00.000+0100"
+          process="//@user.1/@cultivations.1"/>
     </cultivations>
   </user>
-  <user description="descrizione" name="Amministratore 2" email="l@l.it" username="lucas" birthdate="2020-02-01T00:00:00.000+0100">
-    <solutions description="trattamento forte" name="trattamento 2" author="//@user.2" problems="//@user.0/@problems.0"/>
-    <itemProcess description="melanzane" name="melanzane" author="//@user.2" plantSpecies=""/>
+  <user description="descrizione"
+      name="Amministratore 2"
+      email="l@l.it"
+      username="lucas"
+      fullName="amministrastore 2"
+      birthdate="2020-02-01T00:00:00.000+0100">
+    <solutions
+        description="trattamento forte"
+        name="trattamento 2"
+        author="//@user.2"
+        problems="//@user.0/@problems.0"/>
+    <itemProcess
+        description="melanzane"
+        name="melanzane"
+        author="//@user.2"
+        plantSpecies=""/>
   </user>
 </agri:Agri>

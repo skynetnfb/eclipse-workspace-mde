@@ -241,24 +241,6 @@ public class AgriPackageImpl extends EPackageImpl implements AgriPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAgri_Process() {
-		return (EReference) agriEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAgri_Action() {
-		return (EReference) agriEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDescripted() {
 		return descriptedEClass;
 	}
@@ -702,8 +684,6 @@ public class AgriPackageImpl extends EPackageImpl implements AgriPackage {
 		createEReference(agriEClass, AGRI__PROBLEM);
 		createEReference(agriEClass, AGRI__SOLUTION);
 		createEReference(agriEClass, AGRI__ITEM_PROCESS);
-		createEReference(agriEClass, AGRI__PROCESS);
-		createEReference(agriEClass, AGRI__ACTION);
 
 		descriptedEClass = createEClass(DESCRIPTED);
 		createEAttribute(descriptedEClass, DESCRIPTED__DESCRIPTION);
@@ -811,12 +791,6 @@ public class AgriPackageImpl extends EPackageImpl implements AgriPackage {
 		initEReference(getAgri_ItemProcess(), this.getPlant(), null, "itemProcess", null, 0, -1, Agri.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgri_Process(), this.getCultivation(), null, "process", null, 0, -1, Agri.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgri_Action(), this.getAction(), null, "action", null, 0, -1, Agri.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(descriptedEClass, Descripted.class, "Descripted", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

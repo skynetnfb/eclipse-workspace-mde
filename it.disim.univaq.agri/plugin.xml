@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated agri -->
       <package
-            uri="http://www.example.org/agri"
+            uri="http://it.disim.univaq.agri"
             class="it.disim.univaq.agri.AgriPackage"
             genModel="model/agri.genmodel"/>
    </extension>

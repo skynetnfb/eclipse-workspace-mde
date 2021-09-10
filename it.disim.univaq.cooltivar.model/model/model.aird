@@ -4,6 +4,7 @@
     <semanticResources>model.ecore</semanticResources>
     <semanticResources>Application.xmi</semanticResources>
     <semanticResources>model.genmodel</semanticResources>
+    <semanticResources>Farm.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_9WmT4AROEeytWpg0DQZc1g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tU2iEBJFEeyaXs2cxyxjng" name="cooltivar class diagram" repPath="#_tUxCgBJFEeyaXs2cxyxjng" changeId="6d425585-a3e3-4d79-b4c9-447a64f290aa">

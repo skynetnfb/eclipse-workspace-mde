@@ -42,7 +42,7 @@ public interface AgriPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/agri";
+	String eNS_URI = "http://it.disim.univaq.agri";
 
 	/**
 	 * The package namespace name.
@@ -107,31 +107,13 @@ public interface AgriPackage extends EPackage {
 	int AGRI__ITEM_PROCESS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Process</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGRI__PROCESS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGRI__ACTION = 5;
-
-	/**
 	 * The number of structural features of the '<em>Agri</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGRI_FEATURE_COUNT = 6;
+	int AGRI_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Agri</em>' class.
@@ -856,28 +838,6 @@ public interface AgriPackage extends EPackage {
 	EReference getAgri_ItemProcess();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.agri.Agri#getProcess <em>Process</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Process</em>'.
-	 * @see it.disim.univaq.agri.Agri#getProcess()
-	 * @see #getAgri()
-	 * @generated
-	 */
-	EReference getAgri_Process();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link it.disim.univaq.agri.Agri#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action</em>'.
-	 * @see it.disim.univaq.agri.Agri#getAction()
-	 * @see #getAgri()
-	 * @generated
-	 */
-	EReference getAgri_Action();
-
-	/**
 	 * Returns the meta object for class '{@link it.disim.univaq.agri.Descripted <em>Descripted</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1435,22 +1395,6 @@ public interface AgriPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AGRI__ITEM_PROCESS = eINSTANCE.getAgri_ItemProcess();
-
-		/**
-		 * The meta object literal for the '<em><b>Process</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AGRI__PROCESS = eINSTANCE.getAgri_Process();
-
-		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AGRI__ACTION = eINSTANCE.getAgri_Action();
 
 		/**
 		 * The meta object literal for the '{@link it.disim.univaq.agri.impl.DescriptedImpl <em>Descripted</em>}' class.

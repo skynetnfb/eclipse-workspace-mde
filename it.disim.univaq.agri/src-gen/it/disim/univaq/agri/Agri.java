@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link it.disim.univaq.agri.Agri#getProblem <em>Problem</em>}</li>
  *   <li>{@link it.disim.univaq.agri.Agri#getSolution <em>Solution</em>}</li>
  *   <li>{@link it.disim.univaq.agri.Agri#getItemProcess <em>Item Process</em>}</li>
- *   <li>{@link it.disim.univaq.agri.Agri#getProcess <em>Process</em>}</li>
- *   <li>{@link it.disim.univaq.agri.Agri#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @see it.disim.univaq.agri.AgriPackage#getAgri()
@@ -75,29 +73,5 @@ public interface Agri extends EObject {
 	 * @generated
 	 */
 	EList<Plant> getItemProcess();
-
-	/**
-	 * Returns the value of the '<em><b>Process</b></em>' containment reference list.
-	 * The list contents are of type {@link it.disim.univaq.agri.Cultivation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Process</em>' containment reference list.
-	 * @see it.disim.univaq.agri.AgriPackage#getAgri_Process()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Cultivation> getProcess();
-
-	/**
-	 * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-	 * The list contents are of type {@link it.disim.univaq.agri.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' containment reference list.
-	 * @see it.disim.univaq.agri.AgriPackage#getAgri_Action()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Action> getAction();
 
 } // Agri

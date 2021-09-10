@@ -35,8 +35,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/problem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/solution"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/itemProcess"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agri.ecore#//Agri/action"/>
     </genClasses>
     <genClasses ecoreClass="agri.ecore#//Descripted">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agri.ecore#//Descripted/description"/>
