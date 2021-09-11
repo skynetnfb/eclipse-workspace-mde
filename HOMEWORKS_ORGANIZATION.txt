@@ -1,0 +1,16 @@
+HOMEWORK 1
+folder processML
+
+HOMEWORK 2
+folder it.disim.univaq.cooltivar.model
+
+
+HOMEWORK 3
+task 1: folder it.disim.univaq.agri
+task 2: folder Cooltivar2Agricolture
+task 3: folder model2text
+
+
+HOMEWORK 4
+xText it.disim.univaq.xtext.processmanagement
+SIRIUS it.disim.univaq.sirius.design
