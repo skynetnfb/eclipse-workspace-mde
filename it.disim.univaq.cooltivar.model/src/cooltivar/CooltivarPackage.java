@@ -208,13 +208,22 @@ public interface CooltivarPackage extends EPackage {
 	int ITEM_PROCESS_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Is Author Admin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_PROCESS___IS_AUTHOR_ADMIN = DESCRIPTED_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Item Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_PROCESS_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int ITEM_PROCESS_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link cooltivar.impl.UserImpl <em>User</em>}' class.
@@ -708,13 +717,22 @@ public interface CooltivarPackage extends EPackage {
 	int PROBLEM_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Is Author Admin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM___IS_AUTHOR_ADMIN = DESCRIPTED_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Problem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEM_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int PROBLEM_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link cooltivar.impl.SolutionImpl <em>Solution</em>}' class.
@@ -772,13 +790,22 @@ public interface CooltivarPackage extends EPackage {
 	int SOLUTION_FEATURE_COUNT = DESCRIPTED_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Is Author Admin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOLUTION___IS_AUTHOR_ADMIN = DESCRIPTED_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Solution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOLUTION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 0;
+	int SOLUTION_OPERATION_COUNT = DESCRIPTED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link cooltivar.impl.LocationImpl <em>Location</em>}' class.
@@ -971,6 +998,16 @@ public interface CooltivarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getItemProcess_Author();
+
+	/**
+	 * Returns the meta object for the '{@link cooltivar.ItemProcess#isAuthorAdmin() <em>Is Author Admin</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Author Admin</em>' operation.
+	 * @see cooltivar.ItemProcess#isAuthorAdmin()
+	 * @generated
+	 */
+	EOperation getItemProcess__IsAuthorAdmin();
 
 	/**
 	 * Returns the meta object for class '{@link cooltivar.User <em>User</em>}'.
@@ -1352,6 +1389,16 @@ public interface CooltivarPackage extends EPackage {
 	EReference getProblem_Process();
 
 	/**
+	 * Returns the meta object for the '{@link cooltivar.Problem#isAuthorAdmin() <em>Is Author Admin</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Author Admin</em>' operation.
+	 * @see cooltivar.Problem#isAuthorAdmin()
+	 * @generated
+	 */
+	EOperation getProblem__IsAuthorAdmin();
+
+	/**
 	 * Returns the meta object for class '{@link cooltivar.Solution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1382,6 +1429,16 @@ public interface CooltivarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSolution_Problems();
+
+	/**
+	 * Returns the meta object for the '{@link cooltivar.Solution#isAuthorAdmin() <em>Is Author Admin</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Author Admin</em>' operation.
+	 * @see cooltivar.Solution#isAuthorAdmin()
+	 * @generated
+	 */
+	EOperation getSolution__IsAuthorAdmin();
 
 	/**
 	 * Returns the meta object for class '{@link cooltivar.Location <em>Location</em>}'.
@@ -1544,6 +1601,14 @@ public interface CooltivarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITEM_PROCESS__AUTHOR = eINSTANCE.getItemProcess_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Author Admin</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ITEM_PROCESS___IS_AUTHOR_ADMIN = eINSTANCE.getItemProcess__IsAuthorAdmin();
 
 		/**
 		 * The meta object literal for the '{@link cooltivar.impl.UserImpl <em>User</em>}' class.
@@ -1836,6 +1901,14 @@ public interface CooltivarPackage extends EPackage {
 		EReference PROBLEM__PROCESS = eINSTANCE.getProblem_Process();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Author Admin</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROBLEM___IS_AUTHOR_ADMIN = eINSTANCE.getProblem__IsAuthorAdmin();
+
+		/**
 		 * The meta object literal for the '{@link cooltivar.impl.SolutionImpl <em>Solution</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1860,6 +1933,14 @@ public interface CooltivarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SOLUTION__PROBLEMS = eINSTANCE.getSolution_Problems();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Author Admin</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SOLUTION___IS_AUTHOR_ADMIN = eINSTANCE.getSolution__IsAuthorAdmin();
 
 		/**
 		 * The meta object literal for the '{@link cooltivar.impl.LocationImpl <em>Location</em>}' class.

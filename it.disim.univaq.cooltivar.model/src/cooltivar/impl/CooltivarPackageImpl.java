@@ -291,6 +291,15 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getItemProcess__IsAuthorAdmin() {
+		return itemProcessEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUser() {
 		return userEClass;
 	}
@@ -606,6 +615,15 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getProblem__IsAuthorAdmin() {
+		return problemEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSolution() {
 		return solutionEClass;
 	}
@@ -626,6 +644,15 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 	 */
 	public EReference getSolution_Problems() {
 		return (EReference)solutionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSolution__IsAuthorAdmin() {
+		return solutionEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -721,6 +748,7 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 		createEReference(itemProcessEClass, ITEM_PROCESS__ITEM_PROCESS_TYPE);
 		createEReference(itemProcessEClass, ITEM_PROCESS__PROBLEMS);
 		createEReference(itemProcessEClass, ITEM_PROCESS__AUTHOR);
+		createEOperation(itemProcessEClass, ITEM_PROCESS___IS_AUTHOR_ADMIN);
 
 		userEClass = createEClass(USER);
 		createEAttribute(userEClass, USER__EMAIL);
@@ -761,10 +789,12 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 		createEReference(problemEClass, PROBLEM__AUTHOR);
 		createEReference(problemEClass, PROBLEM__SOLUTIONS);
 		createEReference(problemEClass, PROBLEM__PROCESS);
+		createEOperation(problemEClass, PROBLEM___IS_AUTHOR_ADMIN);
 
 		solutionEClass = createEClass(SOLUTION);
 		createEReference(solutionEClass, SOLUTION__AUTHOR);
 		createEReference(solutionEClass, SOLUTION__PROBLEMS);
+		createEOperation(solutionEClass, SOLUTION___IS_AUTHOR_ADMIN);
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__COORDINATES);
@@ -826,6 +856,8 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 		initEReference(getItemProcess_Problems(), this.getProblem(), null, "problems", null, 0, -1, ItemProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getItemProcess_Author(), this.getUser(), null, "author", null, 1, 1, ItemProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getItemProcess__IsAuthorAdmin(), ecorePackage.getEBooleanObject(), "isAuthorAdmin", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUser_Email(), ecorePackage.getEString(), "email", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Username(), ecorePackage.getEString(), "username", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -867,9 +899,13 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 		initEReference(getProblem_Solutions(), this.getSolution(), null, "solutions", null, 0, -1, Problem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProblem_Process(), this.getItemProcess(), null, "process", null, 0, 1, Problem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getProblem__IsAuthorAdmin(), ecorePackage.getEBooleanObject(), "isAuthorAdmin", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSolution_Author(), this.getUser(), null, "author", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSolution_Problems(), this.getProblem(), null, "problems", null, 1, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSolution__IsAuthorAdmin(), ecorePackage.getEBooleanObject(), "isAuthorAdmin", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLocation_Coordinates(), ecorePackage.getEString(), "coordinates", null, 0, 1, Location.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -940,6 +976,12 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });
 		addAnnotation
+		  (itemProcessEClass,
+		   source,
+		   new String[] {
+			   "constraints", "checkAuthor"
+		   });
+		addAnnotation
 		  (processEClass,
 		   source,
 		   new String[] {
@@ -961,6 +1003,18 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (itemProcessEClass,
+		   source,
+		   new String[] {
+			   "checkAuthor", "isAuthorAdmin()"
+		   });
+		addAnnotation
+		  (getItemProcess__IsAuthorAdmin(),
+		   source,
+		   new String[] {
+			   "body", "self.author = UserType::ADMIN"
+		   });
 		addAnnotation
 		  (getUser_Fullname(),
 		   source,
@@ -986,6 +1040,18 @@ public class CooltivarPackageImpl extends EPackageImpl implements CooltivarPacka
 		   source,
 		   new String[] {
 			   "derivation", "self.actionStatus.toString().concat(\' \').concat(self.actionsType.toString().concat(\' \').concat(\'Descrizione...\'))"
+		   });
+		addAnnotation
+		  (getProblem__IsAuthorAdmin(),
+		   source,
+		   new String[] {
+			   "body", "self.author = UserType::ADMIN"
+		   });
+		addAnnotation
+		  (getSolution__IsAuthorAdmin(),
+		   source,
+		   new String[] {
+			   "body", "self.author = UserType::ADMIN"
 		   });
 	}
 

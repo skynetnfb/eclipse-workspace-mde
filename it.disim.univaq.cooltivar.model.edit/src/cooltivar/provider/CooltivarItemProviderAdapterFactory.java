@@ -164,6 +164,29 @@ public class CooltivarItemProviderAdapterFactory extends CooltivarAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link cooltivar.Process} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProcessItemProvider processItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cooltivar.Process}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProcessAdapter() {
+		if (processItemProvider == null) {
+			processItemProvider = new ProcessItemProvider(this);
+		}
+
+		return processItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link cooltivar.ItemSpecies} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -381,6 +404,7 @@ public class CooltivarItemProviderAdapterFactory extends CooltivarAdapterFactory
 		if (descriptedItemProvider != null) descriptedItemProvider.dispose();
 		if (itemProcessItemProvider != null) itemProcessItemProvider.dispose();
 		if (userItemProvider != null) userItemProvider.dispose();
+		if (processItemProvider != null) processItemProvider.dispose();
 		if (itemSpeciesItemProvider != null) itemSpeciesItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (problemItemProvider != null) problemItemProvider.dispose();

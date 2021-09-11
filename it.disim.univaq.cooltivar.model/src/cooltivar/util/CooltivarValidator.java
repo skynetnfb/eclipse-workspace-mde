@@ -156,7 +156,46 @@ public class CooltivarValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateItemProcess(ItemProcess itemProcess, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(itemProcess, diagnostics, context);
+		if (!validate_NoCircularContainment(itemProcess, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(itemProcess, diagnostics, context);
+		if (result || diagnostics != null) result &= validateItemProcess_checkAuthor(itemProcess, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the checkAuthor constraint of '<em>Item Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ITEM_PROCESS__CHECK_AUTHOR__EEXPRESSION = "isAuthorAdmin()";
+
+	/**
+	 * Validates the checkAuthor constraint of '<em>Item Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateItemProcess_checkAuthor(ItemProcess itemProcess, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(CooltivarPackage.Literals.ITEM_PROCESS,
+				 itemProcess,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "checkAuthor",
+				 ITEM_PROCESS__CHECK_AUTHOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

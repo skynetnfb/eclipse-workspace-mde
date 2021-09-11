@@ -31,9 +31,12 @@ public class CooltivarTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new CooltivarTests("cooltivar Tests");
+		suite.addTestSuite(ItemProcessTest.class);
 		suite.addTestSuite(UserTest.class);
 		suite.addTestSuite(ProcessTest.class);
 		suite.addTestSuite(ActionTest.class);
+		suite.addTestSuite(ProblemTest.class);
+		suite.addTestSuite(SolutionTest.class);
 		return suite;
 	}
 

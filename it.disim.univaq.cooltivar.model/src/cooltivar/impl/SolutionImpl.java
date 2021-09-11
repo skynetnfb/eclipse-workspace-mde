@@ -7,13 +7,16 @@ import cooltivar.Problem;
 import cooltivar.Solution;
 import cooltivar.User;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -125,6 +128,30 @@ public class SolutionImpl extends DescriptedImpl implements Solution {
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #isAuthorAdmin() <em>Is Author Admin</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAuthorAdmin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate IS_AUTHOR_ADMIN__EINVOCATION_DELEGATE = ((EOperation.Internal)CooltivarPackage.Literals.SOLUTION___IS_AUTHOR_ADMIN).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boolean isAuthorAdmin() {
+		try {
+			return (Boolean)IS_AUTHOR_ADMIN__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -193,6 +220,20 @@ public class SolutionImpl extends DescriptedImpl implements Solution {
 				return problems != null && !problems.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CooltivarPackage.SOLUTION___IS_AUTHOR_ADMIN:
+				return isAuthorAdmin();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //SolutionImpl

@@ -79,4 +79,13 @@ public interface Problem extends Descripted {
 	 */
 	void setProcess(ItemProcess value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.author = UserType::ADMIN'"
+	 * @generated
+	 */
+	Boolean isAuthorAdmin();
+
 } // Problem

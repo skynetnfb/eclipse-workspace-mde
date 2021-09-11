@@ -19,7 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see cooltivar.CooltivarPackage#getItemProcess()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='checkAuthor'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot checkAuthor='isAuthorAdmin()'"
  * @generated
  */
 public interface ItemProcess extends Descripted {
@@ -78,5 +79,14 @@ public interface ItemProcess extends Descripted {
 	 * @generated
 	 */
 	void setAuthor(User value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.author = UserType::ADMIN'"
+	 * @generated
+	 */
+	Boolean isAuthorAdmin();
 
 } // ItemProcess

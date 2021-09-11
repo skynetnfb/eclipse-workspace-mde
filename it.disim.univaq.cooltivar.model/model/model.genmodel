@@ -37,6 +37,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/itemProcessType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/problems"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ItemProcess/author"/>
+      <genOperations ecoreOperation="model.ecore#//ItemProcess/isAuthorAdmin"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//User">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/email"/>
@@ -76,10 +77,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/author"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/solutions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Problem/process"/>
+      <genOperations ecoreOperation="model.ecore#//Problem/isAuthorAdmin"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Solution">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Solution/author"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Solution/problems"/>
+      <genOperations ecoreOperation="model.ecore#//Solution/isAuthorAdmin"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Location">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Location/coordinates"/>

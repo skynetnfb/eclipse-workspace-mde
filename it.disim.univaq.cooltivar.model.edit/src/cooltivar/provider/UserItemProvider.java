@@ -328,6 +328,11 @@ public class UserItemProvider extends DescriptedItemProvider {
 			(createChildParameter
 				(CooltivarPackage.Literals.USER__ITEM_PROCESS,
 				 CooltivarFactory.eINSTANCE.createItemProcess()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CooltivarPackage.Literals.USER__PROCESS,
+				 CooltivarFactory.eINSTANCE.createProcess()));
 	}
 
 }
